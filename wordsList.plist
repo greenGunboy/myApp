@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>words</key>
+	<dict>
+		<key>0</key>
+		<string>音楽</string>
+		<key>1</key>
+		<string>録音機</string>
+		<key>2</key>
+		<string>ボトル</string>
+		<key>3</key>
+		<string>本</string>
+		<key>4</key>
+		<string>メガネ</string>
+	</dict>
+</dict>
+</plist>

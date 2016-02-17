@@ -15,6 +15,9 @@
 		5A0CDF2D1C731EDA008DA29C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A0CDF2B1C731EDA008DA29C /* LaunchScreen.storyboard */; };
 		5A0CDF381C731EDA008DA29C /* myAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A0CDF371C731EDA008DA29C /* myAppTests.swift */; };
 		5A0CDF431C731EDA008DA29C /* myAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A0CDF421C731EDA008DA29C /* myAppUITests.swift */; };
+		5A0CDF511C7328A3008DA29C /* startViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A0CDF501C7328A3008DA29C /* startViewController.swift */; };
+		5A0CDF531C73290F008DA29C /* timeEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A0CDF521C73290F008DA29C /* timeEditViewController.swift */; };
+		5A0CDF551C73706A008DA29C /* wordsList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5A0CDF541C73706A008DA29C /* wordsList.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +52,9 @@
 		5A0CDF3E1C731EDA008DA29C /* myAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = myAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A0CDF421C731EDA008DA29C /* myAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myAppUITests.swift; sourceTree = "<group>"; };
 		5A0CDF441C731EDA008DA29C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5A0CDF501C7328A3008DA29C /* startViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = startViewController.swift; path = ../startViewController.swift; sourceTree = "<group>"; };
+		5A0CDF521C73290F008DA29C /* timeEditViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = timeEditViewController.swift; path = ../timeEditViewController.swift; sourceTree = "<group>"; };
+		5A0CDF541C73706A008DA29C /* wordsList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = wordsList.plist; path = ../wordsList.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,10 +107,13 @@
 			children = (
 				5A0CDF1F1C731EDA008DA29C /* AppDelegate.swift */,
 				5A0CDF211C731EDA008DA29C /* ViewController.swift */,
+				5A0CDF501C7328A3008DA29C /* startViewController.swift */,
+				5A0CDF521C73290F008DA29C /* timeEditViewController.swift */,
 				5A0CDF231C731EDA008DA29C /* Main.storyboard */,
 				5A0CDF291C731EDA008DA29C /* Assets.xcassets */,
 				5A0CDF2B1C731EDA008DA29C /* LaunchScreen.storyboard */,
 				5A0CDF2E1C731EDA008DA29C /* Info.plist */,
+				5A0CDF541C73706A008DA29C /* wordsList.plist */,
 				5A0CDF261C731EDA008DA29C /* myApp.xcdatamodeld */,
 			);
 			path = myApp;
@@ -196,6 +205,7 @@
 				TargetAttributes = {
 					5A0CDF1B1C731EDA008DA29C = {
 						CreatedOnToolsVersion = 7.2.1;
+						DevelopmentTeam = 96VTTCTLLN;
 					};
 					5A0CDF321C731EDA008DA29C = {
 						CreatedOnToolsVersion = 7.2.1;
@@ -232,6 +242,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5A0CDF551C73706A008DA29C /* wordsList.plist in Resources */,
 				5A0CDF2D1C731EDA008DA29C /* LaunchScreen.storyboard in Resources */,
 				5A0CDF2A1C731EDA008DA29C /* Assets.xcassets in Resources */,
 				5A0CDF251C731EDA008DA29C /* Main.storyboard in Resources */,
@@ -260,7 +271,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				5A0CDF281C731EDA008DA29C /* myApp.xcdatamodeld in Sources */,
+				5A0CDF511C7328A3008DA29C /* startViewController.swift in Sources */,
 				5A0CDF221C731EDA008DA29C /* ViewController.swift in Sources */,
+				5A0CDF531C73290F008DA29C /* timeEditViewController.swift in Sources */,
 				5A0CDF201C731EDA008DA29C /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -401,10 +414,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = myApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.tsubasatakahashi.myApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -412,10 +429,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = myApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.tsubasatakahashi.myApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
@@ -486,6 +507,7 @@
 				5A0CDF491C731EDA008DA29C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5A0CDF4A1C731EDA008DA29C /* Build configuration list for PBXNativeTarget "myAppTests" */ = {
 			isa = XCConfigurationList;
@@ -494,6 +516,7 @@
 				5A0CDF4C1C731EDA008DA29C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5A0CDF4D1C731EDA008DA29C /* Build configuration list for PBXNativeTarget "myAppUITests" */ = {
 			isa = XCConfigurationList;
@@ -502,6 +525,7 @@
 				5A0CDF4F1C731EDA008DA29C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

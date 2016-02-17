@@ -9,16 +9,23 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    
+    @IBOutlet weak var startBtn: UIButton!
+    @IBOutlet weak var timeEditBtn: UIButton!
+    @IBOutlet weak var ideaListBtn: UIButton!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("hello world!")
-        // Do any additional setup after loading the view, typically from a nib.
+       
+        
     }
+    
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        
     }
 
 
