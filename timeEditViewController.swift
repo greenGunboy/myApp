@@ -14,8 +14,8 @@ class timeEditViewController: UIViewController {
     @IBOutlet weak var decideBtn: UIButton!
     @IBOutlet weak var myDatePicker: UIDatePicker!
     
-    var sendUserDecideTime = 0
-
+    var sendUserDecideTime = ""
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,14 +23,14 @@ class timeEditViewController: UIViewController {
     }
     
     override func viewWillAppear(animated: Bool) {
-        
-        myDatePicker.datePickerMode = UIDatePickerMode.CountDownTimer
-        let df = NSDateFormatter()
-        df.dateFormat = "mm:ss"
-        var dateStr = df.stringFromDate(myDatePicker.date)
-        print(dateStr)
-        var sendUserDecideTime = dateStr
-        
+//        
+//        myDatePicker.datePickerMode = UIDatePickerMode.CountDownTimer
+//        let df = NSDateFormatter()
+//        df.dateFormat = "mm:ss"
+//        var dateStr = df.stringFromDate(myDatePicker.date)
+//        print(dateStr)
+//        var sendUserDecideTime = dateStr
+//        
     }
 
     override func didReceiveMemoryWarning() {
@@ -40,12 +40,20 @@ class timeEditViewController: UIViewController {
   
     
     @IBAction func changeBtn(sender: AnyObject) {
+    }
     
-    func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        myDatePicker.datePickerMode = UIDatePickerMode.CountDownTimer
+        let df = NSDateFormatter()
+        df.dateFormat = "mm:ss"
+        var dateStr = df.stringFromDate(myDatePicker.date)
+        var sendUserDecideTime = dateStr
+        print(sendUserDecideTime)
         var newVC = segue.destinationViewController as! ViewController
         newVC.userDecideTime = sendUserDecideTime
+        
         }
-    }
+    
     
     
     /*

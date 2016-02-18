@@ -21,7 +21,7 @@
                                 <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="Start!"/>
                                 <connections>
-                                    <segue destination="5f6-Cx-6Ml" kind="presentation" id="zUK-09-KdX"/>
+                                    <segue destination="5f6-Cx-6Ml" kind="presentation" identifier="myStartSegue" id="zUK-09-KdX"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6F1-Vm-biF">
@@ -93,7 +93,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IBD-dU-Du0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1741.5" y="375.5"/>
+            <point key="canvasLocation" x="1743.5" y="349.5"/>
         </scene>
         <!--Item-->
         <scene sceneID="Cl8-8i-nZf">

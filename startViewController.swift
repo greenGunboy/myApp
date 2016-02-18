@@ -16,18 +16,24 @@ class startViewController: UIViewController {
     @IBOutlet weak var twowordLabel: UILabel!
     @IBOutlet weak var threewordLabel: UILabel!
     
-    var timerCount = 60 * 5
+    var timerCount = ""
     var timer = NSTimer()
     
     func Counting(){
-        timerCount -= 1
+        if(timerCount == ""){
+            timerCount -= 1
         timeLabel.text = "\(timerCount)"
+        }else if{
+            timerCount -= 1
+            timeLabel.text = "\(timerCount)"
+        }
     }
     
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        print(timerCount)
         
         
     }

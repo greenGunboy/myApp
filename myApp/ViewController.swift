@@ -15,7 +15,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var timeEditBtn: UIButton!
     @IBOutlet weak var ideaListBtn: UIButton!
     
-    var userDecideTime = 0
+    var userDecideTime = ""
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,13 +41,16 @@ class ViewController: UIViewController {
 //        
 //    }
     
-//    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-//        if (segue.identifier == "myTimeCell"){
-//            var newVC = segue.destinationViewController as! timeEditViewController
-//            newVC.sendUserDecideTime = userDecideTime
-//        }
-//  
-    
-    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if (segue.identifier == "myStartSegue"){
+            var newVC = segue.destinationViewController as! UITabBarController
+            
+            var startViewController = newVC.viewControllers![1]
+            
+//            var startvc:startViewController = startViewController
+//            
+//            startViewController.timerCount = userDecideTime
+            
+        }
+  }
 }
-
