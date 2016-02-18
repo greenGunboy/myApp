@@ -21,7 +21,7 @@
                                 <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="Start!"/>
                                 <connections>
-                                    <segue destination="rZI-uD-Ybl" kind="show" id="P4F-ji-hqh"/>
+                                    <segue destination="5f6-Cx-6Ml" kind="presentation" id="zUK-09-KdX"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6F1-Vm-biF">
@@ -29,7 +29,7 @@
                                 <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="Time Edit"/>
                                 <connections>
-                                    <segue destination="0JM-jz-TTp" kind="show" id="9j1-xg-hPk"/>
+                                    <segue destination="0JM-jz-TTp" kind="show" identifier="myTimeSegue" id="9j1-xg-hPk"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mDq-pM-eCM">
@@ -64,22 +64,30 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="countDownTimer" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="vqo-Wo-Y4P">
+                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="countDownTimer" countDownDuration="300" minuteInterval="1" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vqo-Wo-Y4P">
                                 <rect key="frame" x="0.0" y="110" width="375" height="216"/>
-                                <date key="date" timeIntervalSinceReferenceDate="477309437.311652">
-                                    <!--2016-02-16 09:57:17 +0000-->
+                                <date key="date" timeIntervalSinceReferenceDate="445773437.311652">
+                                    <!--2015-02-16 09:57:17 +0000-->
                                 </date>
+                                <connections>
+                                    <action selector="changeDatePicker:" destination="0JM-jz-TTp" eventType="valueChanged" id="w8s-Fb-Lck"/>
+                                </connections>
                             </datePicker>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="est-c4-Cgl">
                                 <rect key="frame" x="219" y="455" width="90" height="90"/>
                                 <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="OK"/>
+                                <connections>
+                                    <action selector="changeBtn:" destination="0JM-jz-TTp" eventType="touchUpInside" id="34e-Sm-0g1"/>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="zNz-x8-TAF"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
+                        <outlet property="decideBtn" destination="est-c4-Cgl" id="Sum-dy-RIl"/>
                         <outlet property="myDatePicker" destination="vqo-Wo-Y4P" id="6eC-aI-lAA"/>
                     </connections>
                 </viewController>
@@ -87,7 +95,7 @@
             </objects>
             <point key="canvasLocation" x="1741.5" y="375.5"/>
         </scene>
-        <!--Start View Controller-->
+        <!--Item-->
         <scene sceneID="Cl8-8i-nZf">
             <objects>
                 <viewController id="rZI-uD-Ybl" customClass="startViewController" customModule="myApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -103,21 +111,21 @@
                                 <rect key="frame" x="20" y="165" width="90" height="90"/>
                                 <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dQK-uC-n2v">
                                 <rect key="frame" x="142" y="165" width="90" height="90"/>
                                 <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PF8-2e-RMv">
                                 <rect key="frame" x="265" y="165" width="90" height="90"/>
                                 <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TQH-ID-dXd">
@@ -132,12 +140,13 @@
                                 <rect key="frame" x="145" y="98" width="84" height="21"/>
                                 <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="5oq-jH-wvu"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="onewordLabel" destination="czY-Ua-8uh" id="Ghe-vl-74H"/>
@@ -148,7 +157,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3RD-Na-waH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1741.5" y="-364.5"/>
+            <point key="canvasLocation" x="2553.5" y="-364.5"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="C7o-p5-oMh">
@@ -169,5 +178,25 @@
             </objects>
             <point key="canvasLocation" x="488.5" y="349.5"/>
         </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="3Uz-gg-Ly4">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="5f6-Cx-6Ml" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="uzu-bu-ubo">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="rZI-uD-Ybl" kind="relationship" relationship="viewControllers" id="2NK-a7-kaw"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OHd-Zh-2YC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1854" y="-365"/>
+        </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="zNz-x8-TAF"/>
+    </inferredMetricsTieBreakers>
 </document>

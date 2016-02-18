@@ -14,10 +14,15 @@ class ViewController: UIViewController {
     @IBOutlet weak var startBtn: UIButton!
     @IBOutlet weak var timeEditBtn: UIButton!
     @IBOutlet weak var ideaListBtn: UIButton!
+    
+    var userDecideTime = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
-       
+        print(userDecideTime)
+    }
+    
+    override func viewWillAppear(animated: Bool) {
         
     }
     
@@ -27,7 +32,22 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         
     }
-
-
+    
+//    戻り
+//    @IBAction func returnMenu(segue: UIStoryboardSegue){
+//        let newVC = segue.sourceViewController as! timeEditViewController
+//        userDecideTime = newVC.sendUserDecideTime
+//        print(userDecideTime)
+//        
+//    }
+    
+//    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+//        if (segue.identifier == "myTimeCell"){
+//            var newVC = segue.destinationViewController as! timeEditViewController
+//            newVC.sendUserDecideTime = userDecideTime
+//        }
+//  
+    
+    
 }
 

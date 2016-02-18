@@ -11,27 +11,43 @@ import UIKit
 class timeEditViewController: UIViewController {
     
     
+    @IBOutlet weak var decideBtn: UIButton!
     @IBOutlet weak var myDatePicker: UIDatePicker!
+    
+    var sendUserDecideTime = 0
 
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        myDatePicker.datePickerMode = UIDatePickerMode.Date
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        
+        myDatePicker.datePickerMode = UIDatePickerMode.CountDownTimer
         let df = NSDateFormatter()
         df.dateFormat = "mm:ss"
-        myDatePicker.date = df.dateFromString("05:00")!
-        myDatePicker.maximumDate = df.dateFromString("10:00")
-        
+        var dateStr = df.stringFromDate(myDatePicker.date)
+        print(dateStr)
+        var sendUserDecideTime = dateStr
         
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        
+    }
+  
+    
+    @IBAction func changeBtn(sender: AnyObject) {
+    
+    func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        var newVC = segue.destinationViewController as! ViewController
+        newVC.userDecideTime = sendUserDecideTime
+        }
     }
     
-
+    
     /*
     // MARK: - Navigation
 
