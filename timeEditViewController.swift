@@ -8,11 +8,12 @@
 
 import UIKit
 
-class timeEditViewController: UIViewController {
+class timeEditViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate{
     
     
     @IBOutlet weak var decideBtn: UIButton!
-    @IBOutlet weak var myDatePicker: UIDatePicker!
+    @IBOutlet weak var myMinTimePicker: UIPickerView!
+    @IBOutlet weak var mySecTimePicker: UIPickerView!
     
     var sendUserDecideTime = ""
     
@@ -23,36 +24,55 @@ class timeEditViewController: UIViewController {
     }
     
     override func viewWillAppear(animated: Bool) {
-//        
-//        myDatePicker.datePickerMode = UIDatePickerMode.CountDownTimer
-//        let df = NSDateFormatter()
-//        df.dateFormat = "mm:ss"
-//        var dateStr = df.stringFromDate(myDatePicker.date)
-//        print(dateStr)
-//        var sendUserDecideTime = dateStr
-//        
+        
+        myMinTimePicker.dataSource = self
+        myMinTimePicker.delegate = self
+        mySecTimePicker.dataSource = self
+        mySecTimePicker.delegate = self
+        
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         
     }
+
+    func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
+        return 1
+    }
+
+    func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return 60
+    }
+    
+    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return "\(row)"
+    }
+    
+    func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        
+        myMinTimePicker.tag
+        
+        print("\(row)")
+        print(mySecTimePicker)
+    }
+    
   
     
     @IBAction func changeBtn(sender: AnyObject) {
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        myDatePicker.datePickerMode = UIDatePickerMode.CountDownTimer
-        let df = NSDateFormatter()
-        df.dateFormat = "mm:ss"
-        var dateStr = df.stringFromDate(myDatePicker.date)
-        var sendUserDecideTime = dateStr
-        print(sendUserDecideTime)
-        var newVC = segue.destinationViewController as! ViewController
-        newVC.userDecideTime = sendUserDecideTime
-        
-        }
+//    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+//        myDatePicker.datePickerMode = UIDatePickerMode.CountDownTimer
+//        let df = NSDateFormatter()
+//        df.dateFormat = "mm:ss"
+//        var dateStr = df.stringFromDate(myDatePicker.date)
+//        var sendUserDecideTime = dateStr
+//        print(sendUserDecideTime)
+//        var newVC = segue.destinationViewController as! ViewController
+//        newVC.userDecideTime = sendUserDecideTime
+//        
+//        }
     
     
     

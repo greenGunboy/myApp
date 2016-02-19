@@ -16,17 +16,12 @@ class startViewController: UIViewController {
     @IBOutlet weak var twowordLabel: UILabel!
     @IBOutlet weak var threewordLabel: UILabel!
     
-    var timerCount = ""
+    var timerCount = 60 * 5
     var timer = NSTimer()
     
     func Counting(){
-        if(timerCount == ""){
-            timerCount -= 1
+        timerCount -= 1
         timeLabel.text = "\(timerCount)"
-        }else if{
-            timerCount -= 1
-            timeLabel.text = "\(timerCount)"
-        }
     }
     
     
@@ -35,11 +30,6 @@ class startViewController: UIViewController {
         super.viewDidLoad()
         print(timerCount)
         
-        
-    }
-    
-    override func viewWillAppear(animated: Bool) {
-        
         var filePath = NSBundle.mainBundle().pathForResource("wordsList", ofType: "plist")
         var Objects = NSDictionary(contentsOfFile: filePath!)
         var word = Objects!["words"]
@@ -47,12 +37,19 @@ class startViewController: UIViewController {
         var oneword = Int(arc4random()) % (word!.count)!
         var twoword = Int(arc4random()) % (word!.count)!
         var threeword = Int(arc4random()) % (word!.count)!
-
+        
         self.onewordLabel.text = (Objects!["words"]!["\(oneword)"]) as! String
         self.twowordLabel.text = (Objects!["words"]!["\(twoword)"]) as! String
         self.threewordLabel.text = (Objects!["words"]!["\(threeword)"]) as! String
         
         timer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: Selector("Counting"), userInfo: nil, repeats: true)
+        
+        
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        
+        
 
     }
     
