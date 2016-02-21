@@ -15,11 +15,10 @@ class ViewController: UIViewController {
     @IBOutlet weak var timeEditBtn: UIButton!
     @IBOutlet weak var ideaListBtn: UIButton!
     
-    var userDecideTime = ""
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(userDecideTime)
+        
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -33,24 +32,22 @@ class ViewController: UIViewController {
         
     }
     
-//    戻り
-//    @IBAction func returnMenu(segue: UIStoryboardSegue){
-//        let newVC = segue.sourceViewController as! timeEditViewController
-//        userDecideTime = newVC.sendUserDecideTime
-//        print(userDecideTime)
-//        
+    
+    
+    @IBAction func startButton(sender: UIButton) {
+        
+        var targetView: AnyObject = self.storyboard!.instantiateViewControllerWithIdentifier( "welcome" )
+        self.presentViewController( targetView as! UIViewController, animated: true, completion: nil)
+        var appDelegate:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        }
+    
+//    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    
+//        var newVC = segue.destinationViewController as! startViewController
+//        newVC.startMin = minitesTime
+//        newVC.startSec = secondTime
+//    
 //    }
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if (segue.identifier == "myStartSegue"){
-            var newVC = segue.destinationViewController as! UITabBarController
-            
-            var startViewController = newVC.viewControllers![1]
-            
-//            var startvc:startViewController = startViewController
-//            
-//            startViewController.timerCount = userDecideTime
-            
-        }
-  }
-}
+    
+    }

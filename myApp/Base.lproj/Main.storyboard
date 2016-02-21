@@ -21,6 +21,7 @@
                                 <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="Start!"/>
                                 <connections>
+                                    <action selector="startButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7tu-HI-scj"/>
                                     <segue destination="5f6-Cx-6Ml" kind="presentation" identifier="myStartSegue" id="zUK-09-KdX"/>
                                 </connections>
                             </button>
@@ -105,6 +106,31 @@
             </objects>
             <point key="canvasLocation" x="1821.5" y="357.5"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="Xir-ba-VNi">
+            <objects>
+                <viewController id="JFf-4P-DrB" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="KzY-dG-ZL0"/>
+                        <viewControllerLayoutGuide type="bottom" id="TJw-rg-mQC"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="c5P-hf-DpH">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="O7G-eG-33P">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dm6-YL-tbJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2553.5" y="609.5"/>
+        </scene>
         <!--Draw View Controller-->
         <scene sceneID="5fS-hg-hRX">
             <objects>
@@ -116,15 +142,6 @@
                     <view key="view" contentMode="scaleToFill" id="4fq-j2-QV9">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EZB-in-HrI">
-                                <rect key="frame" x="169" y="59" width="36" height="30"/>
-                                <state key="normal" title="Clear"/>
-                                <connections>
-                                    <action selector="clearTapped:" destination="xRF-7C-Kcq" eventType="touchUpInside" id="VcX-sX-LdK"/>
-                                </connections>
-                            </button>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" systemItem="featured" id="RFq-nf-JFn"/>
@@ -137,7 +154,7 @@
         <!--Start View Controller-->
         <scene sceneID="Cl8-8i-nZf">
             <objects>
-                <viewController id="rZI-uD-Ybl" customClass="startViewController" customModule="myApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="welcome" id="rZI-uD-Ybl" customClass="startViewController" customModule="myApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Oou-Gm-KaU"/>
                         <viewControllerLayoutGuide type="bottom" id="ySy-Kp-Kdr"/>
@@ -170,6 +187,10 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TQH-ID-dXd">
                                 <rect key="frame" x="235" y="366" width="37" height="30"/>
                                 <state key="normal" title="Done"/>
+                                <connections>
+                                    <action selector="completeBtn:" destination="rZI-uD-Ybl" eventType="touchUpInside" id="YUn-w8-ds6"/>
+                                    <segue destination="JFf-4P-DrB" kind="show" id="T4u-u9-WzX"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PB2-fg-YCi">
                                 <rect key="frame" x="101" y="366" width="39" height="30"/>
@@ -188,6 +209,7 @@
                     <tabBarItem key="tabBarItem" systemItem="recents" id="5oq-jH-wvu"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
+                        <outlet property="doneBtn" destination="TQH-ID-dXd" id="EwS-kB-Nav"/>
                         <outlet property="onewordLabel" destination="czY-Ua-8uh" id="Ghe-vl-74H"/>
                         <outlet property="threewordLabel" destination="PF8-2e-RMv" id="MI7-8S-YYh"/>
                         <outlet property="timeLabel" destination="QoL-38-Edz" id="CVK-eM-L0p"/>
@@ -196,7 +218,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3RD-Na-waH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2553.5" y="-250.5"/>
+            <point key="canvasLocation" x="2553.5" y="-254.5"/>
         </scene>
         <!--Memo View Controller-->
         <scene sceneID="ZsZ-JI-1BQ">

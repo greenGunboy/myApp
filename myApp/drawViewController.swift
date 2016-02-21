@@ -22,8 +22,7 @@ class drawViewController: UIViewController {
     }
     
     
-    @IBAction func clearTapped(sender: UIButton) {
-    }
+
     
 
     /*

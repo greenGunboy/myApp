@@ -15,7 +15,11 @@ class timeEditViewController: UIViewController, UIPickerViewDataSource, UIPicker
     @IBOutlet weak var myMinTimePicker: UIPickerView!
     @IBOutlet weak var mySecTimePicker: UIPickerView!
     
-    var sendUserDecideTime = ""
+    
+    var userDecideMinTime = ""
+    var userDecideSecTime = ""
+    var min = 0
+    var sec = 0
     
     
     override func viewDidLoad() {
@@ -51,29 +55,38 @@ class timeEditViewController: UIViewController, UIPickerViewDataSource, UIPicker
     
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         
-        myMinTimePicker.tag
+        if pickerView.tag == 1 {
+            min = row
+            print(min)
+        }
         
-        print("\(row)")
-        print(mySecTimePicker)
+        if pickerView.tag == 2{
+            sec = row
+            print(sec)
+        }
+        
     }
-    
   
     
     @IBAction func changeBtn(sender: AnyObject) {
+        var appDelegate:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        appDelegate.startMin = min
+        appDelegate.startSec = sec
+        appDelegate.startFlg = true
+
     }
     
 //    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-//        myDatePicker.datePickerMode = UIDatePickerMode.CountDownTimer
-//        let df = NSDateFormatter()
-//        df.dateFormat = "mm:ss"
-//        var dateStr = df.stringFromDate(myDatePicker.date)
-//        var sendUserDecideTime = dateStr
-//        print(sendUserDecideTime)
-//        var newVC = segue.destinationViewController as! ViewController
-//        newVC.userDecideTime = sendUserDecideTime
+//        
+//        userDecideMinTime = ("\(min)")
+//        userDecideSecTime = ("\(sec)")
+//        
+//        var newVC = segue.destinationViewController as! AppDelegate
+//        newVC.startMin = userDecideMinTime
+//        newVC.startSec = userDecideSecTime
 //        
 //        }
-    
+//
     
     
     /*
