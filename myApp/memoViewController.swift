@@ -29,8 +29,12 @@ class memoViewController: UIViewController {
     }
    
     @IBAction func closeBtn(sender: AnyObject) {
-     
-        memoTextView.resignFirstResponder()
+        
+//        var ud = NSUserDefaults.standardUserDefaults()
+//        ud.setObject("\(memoTextView.text)", forKey: "memo")
+//        var udMemo: AnyObject! = ud.objectForKey("memo")
+//        
+//        memoTextView.resignFirstResponder()
         
     }
     

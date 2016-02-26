@@ -57,12 +57,10 @@ class timeEditViewController: UIViewController, UIPickerViewDataSource, UIPicker
         
         if pickerView.tag == 1 {
             min = row
-            print(min)
         }
         
         if pickerView.tag == 2{
             sec = row
-            print(sec)
         }
         
     }
@@ -75,18 +73,6 @@ class timeEditViewController: UIViewController, UIPickerViewDataSource, UIPicker
         appDelegate.startFlg = true
 
     }
-    
-//    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-//        
-//        userDecideMinTime = ("\(min)")
-//        userDecideSecTime = ("\(sec)")
-//        
-//        var newVC = segue.destinationViewController as! AppDelegate
-//        newVC.startMin = userDecideMinTime
-//        newVC.startSec = userDecideSecTime
-//        
-//        }
-//
     
     
     /*

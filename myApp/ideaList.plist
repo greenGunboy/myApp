@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>draw</key>
+	<dict>
+		<key>街</key>
+		<string></string>
+	</dict>
+	<key>memo</key>
+	<dict>
+		<key>xcodeプログラム</key>
+		<string></string>
+	</dict>
+	<key>oneword</key>
+	<dict>
+		<key>メガネ</key>
+		<string></string>
+	</dict>
+	<key>twoword</key>
+	<dict>
+		<key>音楽</key>
+		<string></string>
+	</dict>
+	<key>threeword</key>
+	<dict>
+		<key>ボトル</key>
+		<string></string>
+	</dict>
+	<key>time</key>
+	<dict>
+		<key>2016/02/22</key>
+		<string></string>
+	</dict>
+</dict>
+</plist>

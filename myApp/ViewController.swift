@@ -35,19 +35,11 @@ class ViewController: UIViewController {
     
     
     @IBAction func startButton(sender: UIButton) {
-        
+//        storyboardID"welcome"に遷移する
         var targetView: AnyObject = self.storyboard!.instantiateViewControllerWithIdentifier( "welcome" )
         self.presentViewController( targetView as! UIViewController, animated: true, completion: nil)
-        var appDelegate:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        
         }
-    
-//    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-    
-//        var newVC = segue.destinationViewController as! startViewController
-//        newVC.startMin = minitesTime
-//        newVC.startSec = secondTime
-//    
-//    }
     
     
     }

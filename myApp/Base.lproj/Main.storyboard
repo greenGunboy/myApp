@@ -37,6 +37,9 @@
                                 <rect key="frame" x="84" y="471" width="80" height="80"/>
                                 <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="Idea List"/>
+                                <connections>
+                                    <segue destination="JFf-4P-DrB" kind="show" id="Inh-2E-srk"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -80,13 +83,13 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="min" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cAn-qC-Vjy">
                                 <rect key="frame" x="145" y="208" width="28" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="sec" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tab-az-L9u">
                                 <rect key="frame" x="328" y="208" width="27" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <pickerView tag="1" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uc5-dQ-IKe">
@@ -104,12 +107,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IBD-dU-Du0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1821.5" y="357.5"/>
+            <point key="canvasLocation" x="1837.5" y="-274.5"/>
         </scene>
-        <!--View Controller-->
+        <!--Table View Controller-->
         <scene sceneID="Xir-ba-VNi">
             <objects>
-                <viewController id="JFf-4P-DrB" sceneMemberID="viewController">
+                <viewController id="JFf-4P-DrB" customClass="tableViewController" customModule="myApp" customModuleProvider="target" colorLabel="IBBuiltInLabel-Green" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="KzY-dG-ZL0"/>
                         <viewControllerLayoutGuide type="bottom" id="TJw-rg-mQC"/>
@@ -121,20 +124,109 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="O7G-eG-33P">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" showsReorderControl="YES" indentationWidth="10" reuseIdentifier="myCell" id="F2e-fV-K6c">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="F2e-fV-K6c" id="rJk-u3-tQJ">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="63a-HU-YOE" kind="show" identifier="listViewController" id="O9q-vP-tbV"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="JFf-4P-DrB" id="Iwo-wU-MVv"/>
+                                    <outlet property="delegate" destination="JFf-4P-DrB" id="xdD-L2-QsB"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="myTableView" destination="O7G-eG-33P" id="kF1-Yx-eZv"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dm6-YL-tbJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2553.5" y="609.5"/>
+            <point key="canvasLocation" x="2533.5" y="609.5"/>
         </scene>
-        <!--Draw View Controller-->
+        <!--List View Controller-->
+        <scene sceneID="4PU-RZ-KjC">
+            <objects>
+                <viewController id="63a-HU-YOE" customClass="listViewController" customModule="myApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="i2a-BP-w5e"/>
+                        <viewControllerLayoutGuide type="bottom" id="JFz-XH-sBe"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="J3N-hT-RSl">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YaZ-Rg-S9e">
+                                <rect key="frame" x="20" y="165" width="90" height="90"/>
+                                <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LI7-8G-5fn">
+                                <rect key="frame" x="142" y="165" width="90" height="90"/>
+                                <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Okd-aF-4SF">
+                                <rect key="frame" x="265" y="165" width="90" height="90"/>
+                                <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="メモ" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="bRK-Qw-00s">
+                                <rect key="frame" x="20" y="270" width="335" height="189"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V5Q-kv-U6t">
+                                <rect key="frame" x="148" y="493" width="79" height="30"/>
+                                <state key="normal" title="Top Pageへ"/>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="Enk-Lg-b6R"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="timeLabel2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="amG-qZ-Opn">
+                                <rect key="frame" x="78" y="69" width="219" height="21"/>
+                                <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="listMemoText" destination="bRK-Qw-00s" id="8cq-AU-pjw"/>
+                        <outlet property="listOneLabel" destination="YaZ-Rg-S9e" id="rdE-xv-DWf"/>
+                        <outlet property="listThreeLabel" destination="Okd-aF-4SF" id="LyV-ML-Jzh"/>
+                        <outlet property="listTimeLabel" destination="amG-qZ-Opn" id="7xa-Ia-5ae"/>
+                        <outlet property="listTwoLabel" destination="LI7-8G-5fn" id="CZr-o9-d7a"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yp5-oK-xGi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3163.5" y="609.5"/>
+        </scene>
+        <!--Camera View Controller-->
         <scene sceneID="5fS-hg-hRX">
             <objects>
-                <viewController id="xRF-7C-Kcq" customClass="drawViewController" customModule="myApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="xRF-7C-Kcq" customClass="cameraViewController" customModule="myApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="COa-Yw-ddp"/>
                         <viewControllerLayoutGuide type="bottom" id="C2e-5b-hrQ"/>
@@ -164,28 +256,28 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="czY-Ua-8uh">
-                                <rect key="frame" x="20" y="165" width="90" height="90"/>
+                                <rect key="frame" x="20" y="81" width="90" height="90"/>
                                 <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dQK-uC-n2v">
-                                <rect key="frame" x="142" y="165" width="90" height="90"/>
+                                <rect key="frame" x="142" y="81" width="90" height="90"/>
                                 <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PF8-2e-RMv">
-                                <rect key="frame" x="265" y="165" width="90" height="90"/>
+                                <rect key="frame" x="265" y="81" width="90" height="90"/>
                                 <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TQH-ID-dXd">
-                                <rect key="frame" x="235" y="366" width="37" height="30"/>
+                                <rect key="frame" x="238" y="179" width="37" height="30"/>
                                 <state key="normal" title="Done"/>
                                 <connections>
                                     <action selector="completeBtn:" destination="rZI-uD-Ybl" eventType="touchUpInside" id="YUn-w8-ds6"/>
@@ -193,23 +285,34 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PB2-fg-YCi">
-                                <rect key="frame" x="101" y="366" width="39" height="30"/>
+                                <rect key="frame" x="107" y="179" width="39" height="30"/>
                                 <state key="normal" title="Reset"/>
+                                <connections>
+                                    <action selector="resetBtn:" destination="rZI-uD-Ybl" eventType="touchUpInside" id="MBm-8R-KDd"/>
+                                    <segue destination="JFf-4P-DrB" kind="show" id="fgu-Oi-zHg"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Time Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QoL-38-Edz">
-                                <rect key="frame" x="145" y="98" width="84" height="21"/>
+                                <rect key="frame" x="145" y="28" width="84" height="21"/>
                                 <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="メモ" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="cxj-Ca-bDc">
+                                <rect key="frame" x="20" y="217" width="335" height="206"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" systemItem="recents" id="5oq-jH-wvu"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="doneBtn" destination="TQH-ID-dXd" id="EwS-kB-Nav"/>
+                        <outlet property="memoTextView" destination="cxj-Ca-bDc" id="h8m-px-576"/>
                         <outlet property="onewordLabel" destination="czY-Ua-8uh" id="Ghe-vl-74H"/>
                         <outlet property="threewordLabel" destination="PF8-2e-RMv" id="MI7-8S-YYh"/>
                         <outlet property="timeLabel" destination="QoL-38-Edz" id="CVK-eM-L0p"/>
@@ -299,6 +402,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="zNz-x8-TAF"/>
+        <segue reference="Enk-Lg-b6R"/>
+        <segue reference="T4u-u9-WzX"/>
     </inferredMetricsTieBreakers>
 </document>
