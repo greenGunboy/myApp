@@ -20,9 +20,6 @@ class startViewController: UIViewController {
     
     var userIdea:[NSDictionary] = []
     
-//    appdelegateにあるデータを取り出す
-    var appDelegate:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-    
     var timerCount = 60 * 3
     var timer = NSTimer()
     
@@ -45,6 +42,8 @@ class startViewController: UIViewController {
     }
     
     override func viewWillAppear(animated: Bool) {
+        
+        var appDelegate:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
 //        タイマーの設置
         timer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: Selector("Counting"), userInfo: nil, repeats: true)
 //        ユーザーがタイマーセットをした時に起動
@@ -99,7 +98,7 @@ class startViewController: UIViewController {
         userIdea = ud.objectForKey("ideaList")! as! [NSDictionary]
         
         let dateFormatter = NSDateFormatter()
-        dateFormatter.dateFormat = "yyyy/MM/dd HH:mm:ss"
+        dateFormatter.dateFormat = "yyyy/MM/dd HH:mm"
         var now = NSDate()
         
         var time : String = dateFormatter.stringFromDate(now)
@@ -121,14 +120,7 @@ class startViewController: UIViewController {
        
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        var tableVC = segue.destinationViewController as! tableViewController
-        tableVC.listArray = userIdea
-    }
     
-    
-    
-
     /*
     // MARK: - Navigation
 

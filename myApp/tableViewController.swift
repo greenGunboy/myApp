@@ -10,9 +10,7 @@ import UIKit
 
 class tableViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
-    var selectedIndex = 0
-    var listArray:[NSDictionary] = []
-    
+    var selectedIndex:Int = 0
     
     @IBOutlet weak var myTableView: UITableView!
 
@@ -29,6 +27,24 @@ class tableViewController: UIViewController, UITableViewDataSource, UITableViewD
         super.didReceiveMemoryWarning()
         
     }
+    
+    func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        
+        var ud = NSUserDefaults.standardUserDefaults()
+        var ideaList = ud.arrayForKey("ideaList")!
+        
+        ideaList.removeAtIndex(indexPath.row)
+        
+        ud.setObject(ideaList, forKey: "ideaList")
+        
+        tableView.reloadData()
+    
+    }
+    
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
@@ -47,38 +63,44 @@ class tableViewController: UIViewController, UITableViewDataSource, UITableViewD
         
         var cell = UITableViewCell(style: .Default,reuseIdentifier: "myCell")
         
-        cell.textLabel?.text = udideaList[indexPath.row]["time"] as! String
+        cell.textLabel?.text = "\(udideaList[indexPath.row]["time"] as! String)"
+//        "\(udideaList[indexPath.row]["time"] as! String) \(udideaList[indexPath.row]["one"] as! String) \(udideaList[indexPath.row]["two"] as! String) \(udideaList[indexPath.row]["three"] as! String)"
+        
+        cell.accessoryType = .DisclosureIndicator
         
         return cell
     
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        performSegueWithIdentifier("listViewController", sender: nil)
+        
         selectedIndex = indexPath.row
+        
+        performSegueWithIdentifier("listViewController", sender: nil)
+    }
+    
+    
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "listViewController" {
+        var listVC = segue.destinationViewController as! listViewController
+        listVC.scSeletedIndex = selectedIndex
+        }
+    }
+    
+//    override func prefersStatusBarHidden() -> Bool {
+//        return true
+//    }
+    
+    
+    @IBAction func backSwipe(sender: UISwipeGestureRecognizer) {
+        
+        var targetView: UIViewController = self.storyboard!.instantiateViewControllerWithIdentifier("viewController")
+        targetView.modalTransitionStyle = UIModalTransitionStyle.FlipHorizontal
+        self.presentViewController(targetView, animated: true, completion: nil)
         
     }
     
-    func tableView(tableView: UITableView,canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool{
-        return true
-    }
-    
-    func tableView(tableView: UITableView, commitEditingStyle editingStyle:
-        UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-            var ud = NSUserDefaults.standardUserDefaults()
-            listArray = ud.objectForKey("ideaList")! as! [NSDictionary]
-            if editingStyle == .Delete {
-                listArray.removeAtIndex(indexPath.row)
-                tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-            } else if editingStyle == .Insert {
-                
-            }
-    }
-    
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        var listVC = segue.destinationViewController as! listViewController
-        listVC.scSeletedIndex = selectedIndex
-    }
     
 
     /*

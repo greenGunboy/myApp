@@ -36,8 +36,8 @@ class ViewController: UIViewController {
     
     @IBAction func startButton(sender: UIButton) {
 //        storyboardID"welcome"に遷移する
-        var targetView: AnyObject = self.storyboard!.instantiateViewControllerWithIdentifier( "welcome" )
-        self.presentViewController( targetView as! UIViewController, animated: true, completion: nil)
+//        var targetView: AnyObject = self.storyboard!.instantiateViewControllerWithIdentifier( "welcome" )
+//        self.presentViewController( targetView as! UIViewController, animated: true, completion: nil)
         
         }
     

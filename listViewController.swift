@@ -35,8 +35,7 @@ class listViewController: UIViewController {
         self.listOneLabel.text = udResult[scSeletedIndex]["one"] as! String
         self.listTwoLabel.text = udResult[scSeletedIndex]["two"] as! String
         self.listThreeLabel.text = udResult[scSeletedIndex]["three"] as! String
-        self.listMemoText.text = udResult[scSeletedIndex]["memo"] as! String
-        print(listMemoText)
+        listMemoText.text = "\(udResult[scSeletedIndex]["memo"] as! String)"
         
     }
 
@@ -45,7 +44,17 @@ class listViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    
 
+    @IBAction func backSwipe(sender: UISwipeGestureRecognizer) {
+        
+        var targetView: UIViewController = self.storyboard!.instantiateViewControllerWithIdentifier("tableList")
+        targetView.modalTransitionStyle = UIModalTransitionStyle.FlipHorizontal
+        self.presentViewController(targetView, animated: true, completion: nil)
+
+        
+    }
+    
     /*
     // MARK: - Navigation
 
