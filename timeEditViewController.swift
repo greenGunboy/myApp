@@ -12,9 +12,11 @@ class timeEditViewController: UIViewController, UIPickerViewDataSource, UIPicker
     
     
     @IBOutlet weak var decideBtn: UIButton!
+    @IBOutlet weak var animeBtn: SpringButton!
     @IBOutlet weak var myMinTimePicker: UIPickerView!
     @IBOutlet weak var mySecTimePicker: UIPickerView!
-    
+    @IBOutlet weak var minLabel: UILabel!
+    @IBOutlet weak var secLabel: UILabel!
     
     var userDecideMinTime = ""
     var userDecideSecTime = ""
@@ -24,6 +26,9 @@ class timeEditViewController: UIViewController, UIPickerViewDataSource, UIPicker
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        animeBtn.layer.borderWidth = 10
+        animeBtn.layer.borderColor = UIColor.whiteColor().CGColor
         
     }
     
@@ -67,6 +72,8 @@ class timeEditViewController: UIViewController, UIPickerViewDataSource, UIPicker
   
     
     @IBAction func changeBtn(sender: AnyObject) {
+        animeBtn.animation = "squeeze"
+        animeBtn.animate()
         var appDelegate:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         appDelegate.startMin = min
         appDelegate.startSec = sec

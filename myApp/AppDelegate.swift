@@ -8,7 +8,6 @@
 
 import UIKit
 import CoreData
-import Spring
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {

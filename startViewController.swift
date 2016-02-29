@@ -39,6 +39,13 @@ class startViewController: UIViewController {
         self.twowordLabel.text = (Objects!["words"]!["\(twoword)"]) as! String
         self.threewordLabel.text = (Objects!["words"]!["\(threeword)"]) as! String
         
+        onewordLabel.layer.borderWidth = 8
+        twowordLabel.layer.borderWidth = 8
+        threewordLabel.layer.borderWidth = 8
+        onewordLabel.layer.borderColor = UIColor.whiteColor().CGColor
+        twowordLabel.layer.borderColor = UIColor.whiteColor().CGColor
+        threewordLabel.layer.borderColor = UIColor.whiteColor().CGColor
+                
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -71,16 +78,42 @@ class startViewController: UIViewController {
         let ss_str = NSString(format: "%02d", ss)
         
         timeLabel.text = "\(mm_str):\(ss_str)"
-//        カウントが０になった場合の処理
+        
         if timerCount == 0 {
-//            アラートメッセージを表示
+            
+            var ud = NSUserDefaults.standardUserDefaults()
+            userIdea = ud.objectForKey("ideaList")! as! [NSDictionary]
+            
+            let dateFormatter = NSDateFormatter()
+            dateFormatter.dateFormat = "yyyy/MM/dd HH:mm"
+            var now = NSDate()
+            
+            var time : String = dateFormatter.stringFromDate(now)
+            var one : String = onewordLabel.text!
+            var two : String = twowordLabel.text!
+            var three : String = threewordLabel.text!
+            var memo : String = memoTextView.text!
+            
+            var ideaInfo: NSDictionary = ["time":time,"one":one,"two":two,"three":three,"memo":memo]
+            
+            userIdea.append(ideaInfo)
+            
+            ud.setObject(userIdea, forKey: "ideaList")
+            
+            ud.synchronize()
+            
         let alertController = UIAlertController(title: "Time Up", message: "Idea Listへ保存しました", preferredStyle: .Alert)
-            alertController.addAction(UIAlertAction(title: "OK", style: .Default, handler: /* tableView or ViewControllerへ遷移させる */nil))
+            alertController.addAction(UIAlertAction(title: "OK", style: .Default, handler: {action in self.move()}))
             presentViewController(alertController, animated: true, completion: nil)
-//            タイマーを止める
+            
             timer.invalidate()
             
         }
+    }
+    
+    func move() {
+        var targetView: UIViewController = self.storyboard!.instantiateViewControllerWithIdentifier("viewController")
+        self.presentViewController(targetView, animated: true, completion: nil)
     }
     
     
@@ -90,10 +123,10 @@ class startViewController: UIViewController {
         
     }
     
+
     
-    @IBAction func completeBtn(sender: UIButton) {
+    @IBAction func doneBtn(sender: UIButton) {
         
-//        udから取り出す
         var ud = NSUserDefaults.standardUserDefaults()
         userIdea = ud.objectForKey("ideaList")! as! [NSDictionary]
         
@@ -112,15 +145,10 @@ class startViewController: UIViewController {
         userIdea.append(ideaInfo)
         
         ud.setObject(userIdea, forKey: "ideaList")
-    
-        }
-    
-    
-    @IBAction func resetBtn(sender: UIButton) {
-       
+        
+        ud.synchronize()
+        
     }
-    
-    
     /*
     // MARK: - Navigation
 
