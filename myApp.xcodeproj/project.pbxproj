@@ -50,6 +50,11 @@
 		5A57E4F41C833AEB00DC44F7 /* TransitionZoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A57E4D71C833AEB00DC44F7 /* TransitionZoom.swift */; };
 		5A57E4F51C833AEB00DC44F7 /* UnwindSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A57E4D81C833AEB00DC44F7 /* UnwindSegue.swift */; };
 		5A82DB051C7BE4E90006A173 /* tableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A82DB041C7BE4E90006A173 /* tableViewController.swift */; };
+		5A996BB91C8557AF008E4EC1 /* explainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A996BB81C8557AF008E4EC1 /* explainViewController.swift */; };
+		5A996BC81C85657F008E4EC1 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A996BC41C85657F008E4EC1 /* OnboardingViewController.swift */; };
+		5A996BC91C85657F008E4EC1 /* スクリーンショット 2016-02-23 17.01.41.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A996BC51C85657F008E4EC1 /* スクリーンショット 2016-02-23 17.01.41.png */; };
+		5A996BCA1C85657F008E4EC1 /* スクリーンショット 2016-03-01 13.41.09.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A996BC61C85657F008E4EC1 /* スクリーンショット 2016-03-01 13.41.09.png */; };
+		5A996BCB1C85657F008E4EC1 /* スクリーンショット 2016-03-01 13.41.14.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A996BC71C85657F008E4EC1 /* スクリーンショット 2016-03-01 13.41.14.png */; };
 		5AECF4A31C7E8FF0005ED932 /* cameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AECF4A21C7E8FF0005ED932 /* cameraViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -134,6 +139,11 @@
 		5A57E4D71C833AEB00DC44F7 /* TransitionZoom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitionZoom.swift; sourceTree = "<group>"; };
 		5A57E4D81C833AEB00DC44F7 /* UnwindSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnwindSegue.swift; sourceTree = "<group>"; };
 		5A82DB041C7BE4E90006A173 /* tableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = tableViewController.swift; sourceTree = "<group>"; };
+		5A996BB81C8557AF008E4EC1 /* explainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = explainViewController.swift; sourceTree = "<group>"; };
+		5A996BC41C85657F008E4EC1 /* OnboardingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
+		5A996BC51C85657F008E4EC1 /* スクリーンショット 2016-02-23 17.01.41.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "スクリーンショット 2016-02-23 17.01.41.png"; sourceTree = "<group>"; };
+		5A996BC61C85657F008E4EC1 /* スクリーンショット 2016-03-01 13.41.09.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "スクリーンショット 2016-03-01 13.41.09.png"; sourceTree = "<group>"; };
+		5A996BC71C85657F008E4EC1 /* スクリーンショット 2016-03-01 13.41.14.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "スクリーンショット 2016-03-01 13.41.14.png"; sourceTree = "<group>"; };
 		5AECF4A21C7E8FF0005ED932 /* cameraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = cameraViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -185,11 +195,13 @@
 		5A0CDF1E1C731EDA008DA29C /* myApp */ = {
 			isa = PBXGroup;
 			children = (
+				5A996BC31C85657F008E4EC1 /* Onboarding (1) */,
 				5A57E4BA1C833AEB00DC44F7 /* Spring */,
 				5A0CDF1F1C731EDA008DA29C /* AppDelegate.swift */,
 				5A0CDF211C731EDA008DA29C /* ViewController.swift */,
 				5A0CDF501C7328A3008DA29C /* startViewController.swift */,
 				5A0CDF521C73290F008DA29C /* timeEditViewController.swift */,
+				5A996BB81C8557AF008E4EC1 /* explainViewController.swift */,
 				5AECF4A21C7E8FF0005ED932 /* cameraViewController.swift */,
 				5A82DB041C7BE4E90006A173 /* tableViewController.swift */,
 				5A2BE8611C7C2F6B00B7A88E /* listViewController.swift */,
@@ -257,6 +269,17 @@
 				5A57E4D81C833AEB00DC44F7 /* UnwindSegue.swift */,
 			);
 			path = Spring;
+			sourceTree = "<group>";
+		};
+		5A996BC31C85657F008E4EC1 /* Onboarding (1) */ = {
+			isa = PBXGroup;
+			children = (
+				5A996BC41C85657F008E4EC1 /* OnboardingViewController.swift */,
+				5A996BC51C85657F008E4EC1 /* スクリーンショット 2016-02-23 17.01.41.png */,
+				5A996BC61C85657F008E4EC1 /* スクリーンショット 2016-03-01 13.41.09.png */,
+				5A996BC71C85657F008E4EC1 /* スクリーンショット 2016-03-01 13.41.14.png */,
+			);
+			path = "Onboarding (1)";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -370,7 +393,10 @@
 				5A57E4E51C833AEB00DC44F7 /* Info.plist in Resources */,
 				5A0CDF2A1C731EDA008DA29C /* Assets.xcassets in Resources */,
 				5A57E4E81C833AEB00DC44F7 /* LoadingView.xib in Resources */,
+				5A996BCB1C85657F008E4EC1 /* スクリーンショット 2016-03-01 13.41.14.png in Resources */,
 				5A0CDF251C731EDA008DA29C /* Main.storyboard in Resources */,
+				5A996BCA1C85657F008E4EC1 /* スクリーンショット 2016-03-01 13.41.09.png in Resources */,
+				5A996BC91C85657F008E4EC1 /* スクリーンショット 2016-02-23 17.01.41.png in Resources */,
 				5A2BE8641C7C2F9B00B7A88E /* ideaList.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -418,6 +444,7 @@
 				5A57E4E61C833AEB00DC44F7 /* KeyboardLayoutConstraint.swift in Sources */,
 				5A57E4EC1C833AEB00DC44F7 /* SpringAnimation.swift in Sources */,
 				5A57E4E91C833AEB00DC44F7 /* Misc.swift in Sources */,
+				5A996BB91C8557AF008E4EC1 /* explainViewController.swift in Sources */,
 				5A57E4F31C833AEB00DC44F7 /* TransitionManager.swift in Sources */,
 				5A57E4DE1C833AEB00DC44F7 /* DesignableImageView.swift in Sources */,
 				5A0CDF511C7328A3008DA29C /* startViewController.swift in Sources */,
@@ -426,6 +453,7 @@
 				5A0CDF221C731EDA008DA29C /* ViewController.swift in Sources */,
 				5A57E4F21C833AEB00DC44F7 /* SpringView.swift in Sources */,
 				5A57E4DF1C833AEB00DC44F7 /* DesignableLabel.swift in Sources */,
+				5A996BC81C85657F008E4EC1 /* OnboardingViewController.swift in Sources */,
 				5A57E4DB1C833AEB00DC44F7 /* AutoTextView.swift in Sources */,
 				5A57E4F11C833AEB00DC44F7 /* SpringTextView.swift in Sources */,
 				5A57E4DD1C833AEB00DC44F7 /* DesignableButton.swift in Sources */,
