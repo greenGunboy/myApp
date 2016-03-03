@@ -17,6 +17,9 @@ class timeEditViewController: UIViewController, UIPickerViewDataSource, UIPicker
     @IBOutlet weak var mySecTimePicker: UIPickerView!
     @IBOutlet weak var minLabel: UILabel!
     @IBOutlet weak var secLabel: UILabel!
+    @IBOutlet weak var myTextField: UITextField!
+    @IBOutlet weak var addBtn: UIButton!
+    @IBOutlet weak var animaAdd: SpringButton!
     
     var userDecideMinTime = ""
     var userDecideSecTime = ""
@@ -27,8 +30,8 @@ class timeEditViewController: UIViewController, UIPickerViewDataSource, UIPicker
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        animeBtn.layer.borderWidth = 10
-        animeBtn.layer.borderColor = UIColor.whiteColor().CGColor
+//        animeBtn.layer.borderWidth = 10
+//        animeBtn.layer.borderColor = UIColor.whiteColor().CGColor
         
     }
     
@@ -78,9 +81,40 @@ class timeEditViewController: UIViewController, UIPickerViewDataSource, UIPicker
         appDelegate.startMin = min
         appDelegate.startSec = sec
         appDelegate.startFlg = true
-
+        
     }
     
+    
+    
+    @IBAction func addActionBtn(sender: UIButton) {
+        
+        animaAdd.animation = "squeeze"
+        animaAdd.animate()
+        
+        if myTextField.text != ""{
+            var text : String = myTextField.text!
+            var filePath = NSBundle.mainBundle().pathForResource("wordsList", ofType: "plist")
+            var objects = NSMutableDictionary(contentsOfFile: filePath!)
+            var addInt = objects!["words"] as! NSDictionary
+            var userAdd = ["\(addInt.count)":text]
+            objects!["words"] = userAdd
+            objects?.writeToFile(filePath!, atomically: true)
+            print(objects)
+            print("追加された")
+            
+            let alertController = UIAlertController(title: "\(text)を保存しました", message: nil, preferredStyle: .Alert)
+            alertController.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
+            
+            presentViewController(alertController, animated: true, completion: nil)
+            
+        }else{
+            
+            let alertController = UIAlertController(title: "何も入力されていません", message: "追加したいワードを入力してください", preferredStyle: .Alert)
+            alertController.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
+            
+            presentViewController(alertController, animated: true, completion: nil)
+        }
+    }
     
     /*
     // MARK: - Navigation

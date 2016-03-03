@@ -39,13 +39,13 @@ class startViewController: UIViewController {
         self.twowordLabel.text = (Objects!["words"]!["\(twoword)"]) as! String
         self.threewordLabel.text = (Objects!["words"]!["\(threeword)"]) as! String
         
-        onewordLabel.layer.borderWidth = 8
-        twowordLabel.layer.borderWidth = 8
-        threewordLabel.layer.borderWidth = 8
-        onewordLabel.layer.borderColor = UIColor.whiteColor().CGColor
-        twowordLabel.layer.borderColor = UIColor.whiteColor().CGColor
-        threewordLabel.layer.borderColor = UIColor.whiteColor().CGColor
-                
+//        onewordLabel.layer.borderWidth = 8
+//        twowordLabel.layer.borderWidth = 8
+//        threewordLabel.layer.borderWidth = 8
+//        onewordLabel.layer.borderColor = UIColor.whiteColor().CGColor
+//        twowordLabel.layer.borderColor = UIColor.whiteColor().CGColor
+//        threewordLabel.layer.borderColor = UIColor.whiteColor().CGColor
+        
     }
     
     override func viewWillAppear(animated: Bool) {

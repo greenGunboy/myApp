@@ -64,7 +64,6 @@ class tableViewController: UIViewController, UITableViewDataSource, UITableViewD
         var cell = UITableViewCell(style: .Default,reuseIdentifier: "myCell")
         
         cell.textLabel?.text = "\(udideaList[indexPath.row]["time"] as! String)"
-//        "\(udideaList[indexPath.row]["time"] as! String) \(udideaList[indexPath.row]["one"] as! String) \(udideaList[indexPath.row]["two"] as! String) \(udideaList[indexPath.row]["three"] as! String)"
         
         cell.accessoryType = .DisclosureIndicator
         
@@ -87,11 +86,6 @@ class tableViewController: UIViewController, UITableViewDataSource, UITableViewD
         listVC.scSeletedIndex = selectedIndex
         }
     }
-    
-//    override func prefersStatusBarHidden() -> Bool {
-//        return true
-//    }
-    
     
     @IBAction func backSwipe(sender: UISwipeGestureRecognizer) {
         

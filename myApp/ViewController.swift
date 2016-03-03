@@ -27,6 +27,8 @@ class ViewController: UIViewController {
             ideaListBtn.layer.borderWidth = 10
             animationUseBtn.layer.borderWidth = 10
             startBtn.layer.borderColor = UIColor.yellowColor().CGColor
+            startBtn.layer.masksToBounds = true
+//            startBtn.layer.cornerRadius = startBtn.width /
             timeEditBtn.layer.borderColor = UIColor.yellowColor().CGColor
             ideaListBtn.layer.borderColor = UIColor.yellowColor().CGColor
             animationUseBtn.layer.borderColor = UIColor.yellowColor().CGColor

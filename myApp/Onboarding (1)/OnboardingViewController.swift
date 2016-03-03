@@ -6,7 +6,7 @@ class OnboardingController: UIViewController, UIScrollViewDelegate {
 		["text": "bbbbbbbb"],
 		["text": "cccccccc"],
 	]
-	let screen: CGRect = UIScreen.mainScreen().bounds
+    	let screen: CGRect = UIScreen.mainScreen().bounds
 	var scroll: UIScrollView?
 	var dots: UIPageControl?
 	override func viewDidLoad() {
