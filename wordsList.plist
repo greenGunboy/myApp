@@ -89,7 +89,7 @@
 		<key>41</key>
 		<string>海外</string>
 		<key>42</key>
-		<string>国</string>
+		<string>タオル</string>
 		<key>43</key>
 		<string>パソコン</string>
 		<key>44</key>
@@ -111,13 +111,13 @@
 		<key>52</key>
 		<string>買い物</string>
 		<key>53</key>
-		<string>クシ</string>
+		<string>屋台</string>
 		<key>54</key>
 		<string>動物</string>
 		<key>55</key>
-		<string>物流</string>
+		<string>タクシー</string>
 		<key>56</key>
-		<string>入れ物</string>
+		<string>教科書</string>
 		<key>57</key>
 		<string>アプリ</string>
 		<key>58</key>
@@ -206,6 +206,26 @@
 		<string>出会い</string>
 		<key>100</key>
 		<string>カレンダー</string>
+		<key>101</key>
+		<string>カフェ</string>
+		<key>102</key>
+		<string>手作り</string>
+		<key>103</key>
+		<string>フェス</string>
+		<key>104</key>
+		<string>高齢</string>
+		<key>105</key>
+		<string>少子</string>
+		<key>106</key>
+		<string>リサイクル</string>
+		<key>107</key>
+		<string>投票</string>
+		<key>108</key>
+		<string>自動化</string>
+		<key>109</key>
+		<string>コミュニケーション</string>
+		<key>110</key>
+		<string>逆の発想</string>
 	</dict>
 </dict>
 </plist>

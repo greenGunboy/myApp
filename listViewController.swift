@@ -10,7 +10,6 @@ import UIKit
 
 class listViewController: UIViewController {
     
-    
     @IBOutlet weak var listTimeLabel: UILabel!
     @IBOutlet weak var listOneLabel: UILabel!
     @IBOutlet weak var listTwoLabel: UILabel!
@@ -22,19 +21,9 @@ class listViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        listOneLabel.layer.borderWidth = 8
-//        listTwoLabel.layer.borderWidth = 8
-//        listThreeLabel.layer.borderWidth = 8
-//        listOneLabel.layer.borderColor = UIColor.whiteColor().CGColor
-//        listTwoLabel.layer.borderColor = UIColor.whiteColor().CGColor
-//        listThreeLabel.layer.borderColor = UIColor.whiteColor().CGColor
-        
-        
     }
     
     override func viewWillAppear(animated: Bool) {
-        
-        print(scSeletedIndex)
         
         var ud = NSUserDefaults.standardUserDefaults()
         var udResult:NSArray = ud.objectForKey("ideaList") as! NSArray
@@ -51,15 +40,12 @@ class listViewController: UIViewController {
         
     }
     
-    
-
     @IBAction func backSwipe(sender: UISwipeGestureRecognizer) {
         
         var targetView: UIViewController = self.storyboard!.instantiateViewControllerWithIdentifier("tableList")
         targetView.modalTransitionStyle = UIModalTransitionStyle.FlipHorizontal
         self.presentViewController(targetView, animated: true, completion: nil)
 
-        
     }
     
     /*

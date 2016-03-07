@@ -30,8 +30,25 @@ class timeEditViewController: UIViewController, UIPickerViewDataSource, UIPicker
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        animeBtn.layer.borderWidth = 10
-//        animeBtn.layer.borderColor = UIColor.whiteColor().CGColor
+        let topColor = UIColor(red:0, green:0.5, blue:1, alpha:1)
+        let midColor = UIColor(red:0, green:0.5, blue:1, alpha:1)
+        let mid2Color = UIColor(red:0, green:0.5, blue:1, alpha:1)
+        let mid3Color = UIColor(red:0, green:0.5, blue:1, alpha:1)
+        let mid4Color = UIColor(red:0, green:0.55, blue:1, alpha:1)
+        let bottomColor = UIColor(red:0, green:0.75, blue:1, alpha:1)
+        
+        let gradientColors: [CGColor] = [topColor.CGColor,midColor.CGColor,mid2Color.CGColor, mid3Color.CGColor, mid4Color.CGColor, bottomColor.CGColor]
+        let gradientLayer: CAGradientLayer = CAGradientLayer()
+        
+        gradientLayer.colors = gradientColors
+        gradientLayer.frame = self.view.bounds
+        
+        self.view.layer.insertSublayer(gradientLayer, atIndex: 0)
+        
+        animeBtn.layer.borderWidth = 9
+        animeBtn.layer.borderColor = UIColor.whiteColor().CGColor
+        animaAdd.layer.borderWidth = 9
+        animaAdd.layer.borderColor = UIColor.whiteColor().CGColor
         
     }
     
@@ -70,18 +87,23 @@ class timeEditViewController: UIViewController, UIPickerViewDataSource, UIPicker
         if pickerView.tag == 2{
             sec = row
         }
-        
     }
   
     
     @IBAction func changeBtn(sender: AnyObject) {
+        
+        if min == 0 && sec == 0{
+            let alertController = UIAlertController(title: "0秒以上に設定してください", message: nil, preferredStyle: .Alert)
+            alertController.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
+            presentViewController(alertController, animated: true, completion: nil)
+        }else{
         animeBtn.animation = "squeeze"
         animeBtn.animate()
         var appDelegate:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         appDelegate.startMin = min
         appDelegate.startSec = sec
         appDelegate.startFlg = true
-        
+        }
     }
     
     
@@ -92,28 +114,34 @@ class timeEditViewController: UIViewController, UIPickerViewDataSource, UIPicker
         animaAdd.animate()
         
         if myTextField.text != ""{
+//            テキスト内のデータをString型として変数へ
             var text : String = myTextField.text!
+//            plist読み込み
             var filePath = NSBundle.mainBundle().pathForResource("wordsList", ofType: "plist")
+//            Dictionary型に変換
             var objects = NSMutableDictionary(contentsOfFile: filePath!)
-            var addInt = objects!["words"] as! NSDictionary
-            var userAdd = ["\(addInt.count)":text]
-            objects!["words"] = userAdd
+//            Dictionary内のwords内のデータを変数へ
+            var addInt = objects!["words"] as! NSMutableDictionary
+//            add.Intをkey、textをvalueとしてDictionaryに追加
+            addInt.setValue(text, forKey: "\(addInt.count)")
+//            追加したデータを上書き
+            objects!["words"] = addInt
+//            plistへ書き込み
             objects?.writeToFile(filePath!, atomically: true)
-            print(objects)
-            print("追加された")
             
             let alertController = UIAlertController(title: "\(text)を保存しました", message: nil, preferredStyle: .Alert)
             alertController.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
-            
             presentViewController(alertController, animated: true, completion: nil)
             
         }else{
-            
             let alertController = UIAlertController(title: "何も入力されていません", message: "追加したいワードを入力してください", preferredStyle: .Alert)
             alertController.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
-            
             presentViewController(alertController, animated: true, completion: nil)
         }
+    }
+    
+    @IBAction func addText(sender: AnyObject) {
+        
     }
     
     /*

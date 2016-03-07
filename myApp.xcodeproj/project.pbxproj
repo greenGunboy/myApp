@@ -18,7 +18,6 @@
 		5A0CDF531C73290F008DA29C /* timeEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A0CDF521C73290F008DA29C /* timeEditViewController.swift */; };
 		5A0CDF551C73706A008DA29C /* wordsList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5A0CDF541C73706A008DA29C /* wordsList.plist */; };
 		5A2BE8621C7C2F6B00B7A88E /* listViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A2BE8611C7C2F6B00B7A88E /* listViewController.swift */; };
-		5A2BE8641C7C2F9B00B7A88E /* ideaList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5A2BE8631C7C2F9B00B7A88E /* ideaList.plist */; };
 		5A57E3791C83386100DC44F7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A0CDF1F1C731EDA008DA29C /* AppDelegate.swift */; };
 		5A57E4D91C833AEB00DC44F7 /* AsyncButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A57E4BB1C833AEB00DC44F7 /* AsyncButton.swift */; };
 		5A57E4DA1C833AEB00DC44F7 /* AsyncImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A57E4BC1C833AEB00DC44F7 /* AsyncImageView.swift */; };
@@ -51,7 +50,6 @@
 		5A57E4F51C833AEB00DC44F7 /* UnwindSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A57E4D81C833AEB00DC44F7 /* UnwindSegue.swift */; };
 		5A82DB051C7BE4E90006A173 /* tableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A82DB041C7BE4E90006A173 /* tableViewController.swift */; };
 		5A996BB91C8557AF008E4EC1 /* explainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A996BB81C8557AF008E4EC1 /* explainViewController.swift */; };
-		5AECF4A31C7E8FF0005ED932 /* cameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AECF4A21C7E8FF0005ED932 /* cameraViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -103,7 +101,6 @@
 		5A0CDF521C73290F008DA29C /* timeEditViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = timeEditViewController.swift; path = ../timeEditViewController.swift; sourceTree = "<group>"; };
 		5A0CDF541C73706A008DA29C /* wordsList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = wordsList.plist; path = ../wordsList.plist; sourceTree = "<group>"; };
 		5A2BE8611C7C2F6B00B7A88E /* listViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = listViewController.swift; path = ../listViewController.swift; sourceTree = "<group>"; };
-		5A2BE8631C7C2F9B00B7A88E /* ideaList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ideaList.plist; sourceTree = "<group>"; };
 		5A57E4BB1C833AEB00DC44F7 /* AsyncButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncButton.swift; sourceTree = "<group>"; };
 		5A57E4BC1C833AEB00DC44F7 /* AsyncImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncImageView.swift; sourceTree = "<group>"; };
 		5A57E4BD1C833AEB00DC44F7 /* AutoTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutoTextView.swift; sourceTree = "<group>"; };
@@ -136,7 +133,6 @@
 		5A57E4D81C833AEB00DC44F7 /* UnwindSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnwindSegue.swift; sourceTree = "<group>"; };
 		5A82DB041C7BE4E90006A173 /* tableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = tableViewController.swift; sourceTree = "<group>"; };
 		5A996BB81C8557AF008E4EC1 /* explainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = explainViewController.swift; sourceTree = "<group>"; };
-		5AECF4A21C7E8FF0005ED932 /* cameraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = cameraViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -193,7 +189,6 @@
 				5A0CDF501C7328A3008DA29C /* startViewController.swift */,
 				5A0CDF521C73290F008DA29C /* timeEditViewController.swift */,
 				5A996BB81C8557AF008E4EC1 /* explainViewController.swift */,
-				5AECF4A21C7E8FF0005ED932 /* cameraViewController.swift */,
 				5A82DB041C7BE4E90006A173 /* tableViewController.swift */,
 				5A2BE8611C7C2F6B00B7A88E /* listViewController.swift */,
 				5A0CDF231C731EDA008DA29C /* Main.storyboard */,
@@ -201,7 +196,6 @@
 				5A0CDF2B1C731EDA008DA29C /* LaunchScreen.storyboard */,
 				5A0CDF2E1C731EDA008DA29C /* Info.plist */,
 				5A0CDF541C73706A008DA29C /* wordsList.plist */,
-				5A2BE8631C7C2F9B00B7A88E /* ideaList.plist */,
 				5A0CDF261C731EDA008DA29C /* myApp.xcdatamodeld */,
 			);
 			path = myApp;
@@ -374,7 +368,6 @@
 				5A0CDF2A1C731EDA008DA29C /* Assets.xcassets in Resources */,
 				5A57E4E81C833AEB00DC44F7 /* LoadingView.xib in Resources */,
 				5A0CDF251C731EDA008DA29C /* Main.storyboard in Resources */,
-				5A2BE8641C7C2F9B00B7A88E /* ideaList.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -409,7 +402,6 @@
 				5A57E4EF1C833AEB00DC44F7 /* SpringLabel.swift in Sources */,
 				5A57E4E21C833AEB00DC44F7 /* DesignableTextView.swift in Sources */,
 				5A57E4F41C833AEB00DC44F7 /* TransitionZoom.swift in Sources */,
-				5AECF4A31C7E8FF0005ED932 /* cameraViewController.swift in Sources */,
 				5A57E4EE1C833AEB00DC44F7 /* SpringImageView.swift in Sources */,
 				5A57E4DA1C833AEB00DC44F7 /* AsyncImageView.swift in Sources */,
 				5A57E4F01C833AEB00DC44F7 /* SpringTextField.swift in Sources */,

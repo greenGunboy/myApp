@@ -16,8 +16,23 @@ class tableViewController: UIViewController, UITableViewDataSource, UITableViewD
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        }
+        myTableView.delegate = self
+        
+        let topColor = UIColor(red:0, green:0.5, blue:1, alpha:1)
+        let midColor = UIColor(red:0, green:0.5, blue:1, alpha:1)
+        let mid2Color = UIColor(red:0, green:0.5, blue:1, alpha:1)
+        let mid3Color = UIColor(red:0, green:0.60, blue:1, alpha:1)
+        let mid4Color = UIColor(red:0, green:0.66, blue:1, alpha:1)
+        let bottomColor = UIColor(red:0, green:0.95, blue:1, alpha:1)
+        
+        let gradientColors: [CGColor] = [topColor.CGColor,midColor.CGColor,mid2Color.CGColor, mid3Color.CGColor, mid4Color.CGColor, bottomColor.CGColor]
+        let gradientLayer: CAGradientLayer = CAGradientLayer()
+        
+        gradientLayer.colors = gradientColors
+        gradientLayer.frame = self.view.bounds
+        
+        self.view.layer.insertSublayer(gradientLayer, atIndex: 0)
+    }
     
     override func viewWillAppear(animated: Bool) {
         
@@ -45,14 +60,12 @@ class tableViewController: UIViewController, UITableViewDataSource, UITableViewD
     
     }
     
-    
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         var ud = NSUserDefaults.standardUserDefaults()
         var udideaList: NSArray! = ud.objectForKey("ideaList") as! NSArray
         
         return udideaList.count
-        
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -74,17 +87,16 @@ class tableViewController: UIViewController, UITableViewDataSource, UITableViewD
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
         selectedIndex = indexPath.row
-        
-        performSegueWithIdentifier("listViewController", sender: nil)
+        performSegueWithIdentifier("listViewSegue", sender: nil)
     }
     
-    
-    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "listViewController" {
+        
+        if segue.identifier == "listViewSegue" {
         var listVC = segue.destinationViewController as! listViewController
         listVC.scSeletedIndex = selectedIndex
         }
+        
     }
     
     @IBAction func backSwipe(sender: UISwipeGestureRecognizer) {
@@ -95,8 +107,6 @@ class tableViewController: UIViewController, UITableViewDataSource, UITableViewD
         
     }
     
-    
-
     /*
     // MARK: - Navigation
 

@@ -19,14 +19,13 @@ class startViewController: UIViewController {
     @IBOutlet weak var doneBtn: UIButton!
     
     var userIdea:[NSDictionary] = []
-    
     var timerCount = 60 * 3
     var timer = NSTimer()
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         var filePath = NSBundle.mainBundle().pathForResource("wordsList", ofType: "plist")
         var Objects = NSDictionary(contentsOfFile: filePath!)
         var word = Objects!["words"]
@@ -39,31 +38,18 @@ class startViewController: UIViewController {
         self.twowordLabel.text = (Objects!["words"]!["\(twoword)"]) as! String
         self.threewordLabel.text = (Objects!["words"]!["\(threeword)"]) as! String
         
-//        onewordLabel.layer.borderWidth = 8
-//        twowordLabel.layer.borderWidth = 8
-//        threewordLabel.layer.borderWidth = 8
-//        onewordLabel.layer.borderColor = UIColor.whiteColor().CGColor
-//        twowordLabel.layer.borderColor = UIColor.whiteColor().CGColor
-//        threewordLabel.layer.borderColor = UIColor.whiteColor().CGColor
-        
     }
     
     override func viewWillAppear(animated: Bool) {
         
         var appDelegate:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-//        タイマーの設置
         timer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: Selector("Counting"), userInfo: nil, repeats: true)
-//        ユーザーがタイマーセットをした時に起動
+        
         if appDelegate.startFlg {
             timerCount = 60 * appDelegate.startMin + appDelegate.startSec
-            
             appDelegate.startFlg = false
         }
-        
     }
-    
-
-
     
     func Counting(){
 //        タイムフォーマットの指定(00:00)
@@ -107,7 +93,6 @@ class startViewController: UIViewController {
             presentViewController(alertController, animated: true, completion: nil)
             
             timer.invalidate()
-            
         }
     }
     
@@ -116,38 +101,33 @@ class startViewController: UIViewController {
         self.presentViewController(targetView, animated: true, completion: nil)
     }
     
-    
-        
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         
     }
     
-
-    
     @IBAction func doneBtn(sender: UIButton) {
         
         var ud = NSUserDefaults.standardUserDefaults()
-        userIdea = ud.objectForKey("ideaList")! as! [NSDictionary]
         
+        if ud.objectForKey("ideaList") != nil {
+        
+            userIdea = ud.objectForKey("ideaList")! as! [NSDictionary]
+        
+        }
         let dateFormatter = NSDateFormatter()
         dateFormatter.dateFormat = "yyyy/MM/dd HH:mm"
         var now = NSDate()
-        
         var time : String = dateFormatter.stringFromDate(now)
         var one : String = onewordLabel.text!
         var two : String = twowordLabel.text!
         var three : String = threewordLabel.text!
         var memo : String = memoTextView.text!
-        
         var ideaInfo: NSDictionary = ["time":time,"one":one,"two":two,"three":three,"memo":memo]
-        
         userIdea.append(ideaInfo)
         
         ud.setObject(userIdea, forKey: "ideaList")
-        
         ud.synchronize()
-        
     }
     /*
     // MARK: - Navigation

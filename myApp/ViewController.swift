@@ -22,35 +22,44 @@ class ViewController: UIViewController {
         override func viewDidLoad() {
         super.viewDidLoad()
             
-            startBtn.layer.borderWidth = 10
-            timeEditBtn.layer.borderWidth = 10
-            ideaListBtn.layer.borderWidth = 10
-            animationUseBtn.layer.borderWidth = 10
-            startBtn.layer.borderColor = UIColor.yellowColor().CGColor
-            startBtn.layer.masksToBounds = true
-//            startBtn.layer.cornerRadius = startBtn.width /
-            timeEditBtn.layer.borderColor = UIColor.yellowColor().CGColor
-            ideaListBtn.layer.borderColor = UIColor.yellowColor().CGColor
-            animationUseBtn.layer.borderColor = UIColor.yellowColor().CGColor
+            let topColor = UIColor(red:0, green:0.78, blue:1, alpha:1)
+            let midColor = UIColor(red:0, green:0.6, blue:1, alpha:1)
+            let mid2Color = UIColor(red:0, green:0.5, blue:1, alpha:1)
+            let mid3Color = UIColor(red:0, green:0.5, blue:1, alpha:1)
+            let mid4Color = UIColor(red:0, green:0.6, blue:1, alpha:1)
+            let bottomColor = UIColor(red:0, green:0.78, blue:1, alpha:1)
             
-//            let gLayer = CAGradientLayer()
-//            gLayer.frame = self.view.frame
-//            gLayer.colors = [UIColor.blueColor().CGColor, UIColor.cyanColor().CGColor]
-//            self.view.layer.insertSublayer(gLayer, atIndex: 0)
-        
+            let gradientColors: [CGColor] = [topColor.CGColor,midColor.CGColor,mid2Color.CGColor, mid3Color.CGColor, mid4Color.CGColor, bottomColor.CGColor]
+            let gradientLayer: CAGradientLayer = CAGradientLayer()
+            
+            gradientLayer.colors = gradientColors
+            gradientLayer.frame = self.view.bounds
+            
+            self.view.layer.insertSublayer(gradientLayer, atIndex: 0)
+            
+            gradientLayer.startPoint = CGPointMake(1.0, 0.0)
+            gradientLayer.endPoint = CGPointMake(0.0, 1.0)
+            
+            startBtn.layer.borderWidth = 9
+            timeEditBtn.layer.borderWidth = 9
+            ideaListBtn.layer.borderWidth = 9
+            animationUseBtn.layer.borderWidth = 9
+            startBtn.layer.borderColor = UIColor.whiteColor().CGColor
+            startBtn.layer.masksToBounds = true
+            timeEditBtn.layer.borderColor = UIColor.whiteColor().CGColor
+            ideaListBtn.layer.borderColor = UIColor.whiteColor().CGColor
+            animationUseBtn.layer.borderColor = UIColor.whiteColor().CGColor
+            
     }
     
     override func viewWillAppear(animated: Bool) {
         
     }
-    
-    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         
     }
-    
     
     @IBAction func startButton(sender: UIButton) {
         animationStart.animation = "squeeze"
