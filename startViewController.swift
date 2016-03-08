@@ -8,7 +8,7 @@
 
 import UIKit
 
-class startViewController: UIViewController {
+class startViewController: UIViewController, UITextViewDelegate {
     
     
     @IBOutlet weak var timeLabel: UILabel!
@@ -26,13 +26,18 @@ class startViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        memoTextView.text = "ここにメモを書いてください"
+        memoTextView.delegate = self
+        memoTextView.textColor = UIColor.lightGrayColor()
+        
         var filePath = NSBundle.mainBundle().pathForResource("wordsList", ofType: "plist")
         var Objects = NSDictionary(contentsOfFile: filePath!)
         var word = Objects!["words"]
         
-        var oneword = Int(arc4random()) % (word!.count)!
-        var twoword = Int(arc4random()) % (word!.count)!
-        var threeword = Int(arc4random()) % (word!.count)!
+        
+        var oneword = arc4random_uniform(UInt32(word!.count))
+        var twoword = arc4random_uniform(UInt32(word!.count))
+        var threeword = arc4random_uniform(UInt32(word!.count))
         
         self.onewordLabel.text = (Objects!["words"]!["\(oneword)"]) as! String
         self.twowordLabel.text = (Objects!["words"]!["\(twoword)"]) as! String
@@ -111,9 +116,7 @@ class startViewController: UIViewController {
         var ud = NSUserDefaults.standardUserDefaults()
         
         if ud.objectForKey("ideaList") != nil {
-        
             userIdea = ud.objectForKey("ideaList")! as! [NSDictionary]
-        
         }
         let dateFormatter = NSDateFormatter()
         dateFormatter.dateFormat = "yyyy/MM/dd HH:mm"
@@ -122,12 +125,30 @@ class startViewController: UIViewController {
         var one : String = onewordLabel.text!
         var two : String = twowordLabel.text!
         var three : String = threewordLabel.text!
-        var memo : String = memoTextView.text!
+        var memo : String = ""
+        if memoTextView.text == "ここにメモを書いてください"{
+            memo = ""
+        }else{
+            memo = memoTextView.text!
+        }
         var ideaInfo: NSDictionary = ["time":time,"one":one,"two":two,"three":three,"memo":memo]
         userIdea.append(ideaInfo)
         
         ud.setObject(userIdea, forKey: "ideaList")
         ud.synchronize()
+    }
+    
+    func textViewDidBeginEditing(memoTextView: UITextView) {
+        if memoTextView.textColor == UIColor.lightGrayColor() {
+            memoTextView.text = nil
+            memoTextView.textColor = UIColor.blackColor()
+        }
+    }
+    func textViewDidEndEditing(memoTextView: UITextView) {
+        if memoTextView.text.isEmpty {
+            memoTextView.text = "ここにメモを書いてください"
+            memoTextView.textColor = UIColor.lightGrayColor()
+        }
     }
     /*
     // MARK: - Navigation

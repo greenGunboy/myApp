@@ -22,12 +22,12 @@ class ViewController: UIViewController {
         override func viewDidLoad() {
         super.viewDidLoad()
             
-            let topColor = UIColor(red:0, green:0.78, blue:1, alpha:1)
+            let topColor = UIColor(red:0, green:0.82, blue:1, alpha:1)
             let midColor = UIColor(red:0, green:0.6, blue:1, alpha:1)
             let mid2Color = UIColor(red:0, green:0.5, blue:1, alpha:1)
             let mid3Color = UIColor(red:0, green:0.5, blue:1, alpha:1)
             let mid4Color = UIColor(red:0, green:0.6, blue:1, alpha:1)
-            let bottomColor = UIColor(red:0, green:0.78, blue:1, alpha:1)
+            let bottomColor = UIColor(red:0, green:0.82, blue:1, alpha:1)
             
             let gradientColors: [CGColor] = [topColor.CGColor,midColor.CGColor,mid2Color.CGColor, mid3Color.CGColor, mid4Color.CGColor, bottomColor.CGColor]
             let gradientLayer: CAGradientLayer = CAGradientLayer()

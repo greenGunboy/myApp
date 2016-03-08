@@ -83,7 +83,7 @@ class explainViewController: UIViewController, UIScrollViewDelegate {
         scroll?.delegate = self
         dots?.addTarget(self, action: Selector("swipe:"), forControlEvents: UIControlEvents.ValueChanged)
         let closeButton = UIButton()
-        closeButton.frame = CGRect(x: screen.width - 70, y: 20, width: 60, height: 60)
+        closeButton.frame = CGRect(x: screen.width - 315, y: 20, width: 60, height: 60)
         closeButton.setTitle("Back", forState: .Normal)
         closeButton.setTitleColor(UIColor(red: 0.0/255.0, green: 0.0/255.0, blue: 0.0/255.0, alpha: 0.5), forState: .Normal)
         closeButton.titleLabel!.font =  UIFont.systemFontOfSize(20)
