@@ -18,7 +18,6 @@ class explainViewController: UIViewController, UIScrollViewDelegate {
         ["text": "Let's Try!\n\nあなたのアイディアで\n世界を変えよう！"],
     ]
     
-    let myBoundSize: CGSize = UIScreen.mainScreen().bounds.size
     let screen: CGRect = UIScreen.mainScreen().bounds
     var scroll: UIScrollView?
     var dots: UIPageControl?
@@ -41,7 +40,7 @@ class explainViewController: UIViewController, UIScrollViewDelegate {
         
         self.view.layer.insertSublayer(gradientLayer, atIndex: 0)
         
-        scroll = UIScrollView(frame: CGRect(x: 0.0, y: 0.0, width: myBoundSize.width, height: myBoundSize.height))
+        scroll = UIScrollView(frame: CGRect(x: 0.0, y: 0.0, width: screen.width, height: screen.height))
         scroll?.alpha = 0
         scroll?.showsHorizontalScrollIndicator = false
         scroll?.showsVerticalScrollIndicator = false
@@ -57,7 +56,7 @@ class explainViewController: UIViewController, UIScrollViewDelegate {
         for var i = 0; i < slides.count; ++i {
             
             if let text = slides[i]["text"] {
-                let textView = UITextView(frame: CGRect(x: myBoundSize.width * 0.05 + CGFloat(i) * myBoundSize.width, y: myBoundSize.height / 2 - 120, width: screen.width * 0.9, height: 250.0))
+                let textView = UITextView(frame: CGRect(x: screen.width * 0.05 + CGFloat(i) * screen.width, y: screen.height / 2 - 120, width: screen.width * 0.9, height: 250.0))
                 textView.text = text
                 textView.textAlignment = NSTextAlignment.Center
                 textView.font = UIFont.systemFontOfSize(28, weight: 0)
@@ -67,7 +66,7 @@ class explainViewController: UIViewController, UIScrollViewDelegate {
                 textView.tag = i
                 let moveToCenter = CABasicAnimation(keyPath: "position.y")
                 moveToCenter.fromValue = -150.0
-                moveToCenter.toValue = myBoundSize.height/2
+                moveToCenter.toValue = screen.height/2
                 moveToCenter.duration = 0.8
                 
                 textView.layer.addAnimation(moveToCenter, forKey: nil)
@@ -83,7 +82,7 @@ class explainViewController: UIViewController, UIScrollViewDelegate {
         scroll?.delegate = self
         dots?.addTarget(self, action: Selector("swipe:"), forControlEvents: UIControlEvents.ValueChanged)
         let closeButton = UIButton()
-        closeButton.frame = CGRect(x: screen.width - 315, y: 20, width: 60, height: 60)
+        closeButton.frame = CGRect(x: screen.width / 25, y: 20, width: 60, height: 60)
         closeButton.setTitle("Back", forState: .Normal)
         closeButton.setTitleColor(UIColor(red: 0.0/255.0, green: 0.0/255.0, blue: 0.0/255.0, alpha: 0.5), forState: .Normal)
         closeButton.titleLabel!.font =  UIFont.systemFontOfSize(20)

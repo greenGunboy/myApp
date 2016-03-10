@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import iAd
 
 class listViewController: UIViewController {
     
@@ -15,12 +16,14 @@ class listViewController: UIViewController {
     @IBOutlet weak var listTwoLabel: UILabel!
     @IBOutlet weak var listThreeLabel: UILabel!
     @IBOutlet weak var listMemoText: UITextView!
+    @IBOutlet weak var myAdBanner: ADBannerView!
     
     var scSeletedIndex:Int = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.canDisplayBannerAds = true
+        self.myAdBanner.hidden = true
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -39,6 +42,19 @@ class listViewController: UIViewController {
         super.didReceiveMemoryWarning()
         
     }
+    
+    func bannerViewDidLoadAd(banner: ADBannerView!){
+        self.myAdBanner.hidden = false
+    }
+    
+    func bannerViewActionShouldBegin(banner: ADBannerView!, willLeaveApplication willLeave:Bool) ->Bool{
+        return willLeave
+    }
+    
+    func bannerView(banner: ADBannerView!, didFailToReceiveAdWithError error: NSError!){
+        self.myAdBanner.hidden = true
+    }
+
     
     @IBAction func backSwipe(sender: UISwipeGestureRecognizer) {
         

@@ -7,15 +7,20 @@
 //
 
 import UIKit
+import iAd
 
 class tableViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     var selectedIndex:Int = 0
     
     @IBOutlet weak var myTableView: UITableView!
-
+    @IBOutlet weak var myAdBanner: ADBannerView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.canDisplayBannerAds = true
+        self.myAdBanner.hidden = true
         myTableView.delegate = self
         
         let topColor = UIColor(red:0, green:0.5, blue:1, alpha:1)
@@ -63,9 +68,11 @@ class tableViewController: UIViewController, UITableViewDataSource, UITableViewD
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         var ud = NSUserDefaults.standardUserDefaults()
-        var udideaList: NSArray! = ud.objectForKey("ideaList") as! NSArray
-        
-        return udideaList.count
+        var udideaList: NSArray? = ud.objectForKey("ideaList") as? NSArray
+        if udideaList == nil{
+            udideaList = []
+        }
+        return udideaList!.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -89,6 +96,19 @@ class tableViewController: UIViewController, UITableViewDataSource, UITableViewD
         selectedIndex = indexPath.row
         performSegueWithIdentifier("listViewSegue", sender: nil)
     }
+    
+    func bannerViewDidLoadAd(banner: ADBannerView!){
+        self.myAdBanner.hidden = false
+    }
+    
+    func bannerViewActionShouldBegin(banner: ADBannerView!, willLeaveApplication willLeave:Bool) ->Bool{
+        return willLeave
+    }
+    
+    func bannerView(banner: ADBannerView!, didFailToReceiveAdWithError error: NSError!){
+        self.myAdBanner.hidden = true
+    }
+
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         

@@ -93,16 +93,18 @@ class timeEditViewController: UIViewController, UIPickerViewDataSource, UIPicker
     @IBAction func changeBtn(sender: AnyObject) {
         
         if min == 0 && sec == 0{
+            animeBtn.animation = "squeeze"
+            animeBtn.animate()
             let alertController = UIAlertController(title: "0秒以上に設定してください", message: nil, preferredStyle: .Alert)
             alertController.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
             presentViewController(alertController, animated: true, completion: nil)
         }else{
-        animeBtn.animation = "squeeze"
-        animeBtn.animate()
-        var appDelegate:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-        appDelegate.startMin = min
-        appDelegate.startSec = sec
-        appDelegate.startFlg = true
+            animeBtn.animation = "squeeze"
+            animeBtn.animate()
+            var appDelegate:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+            appDelegate.startMin = min
+            appDelegate.startSec = sec
+            appDelegate.startFlg = true
         }
     }
     

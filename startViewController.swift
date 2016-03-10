@@ -34,7 +34,6 @@ class startViewController: UIViewController, UITextViewDelegate {
         var Objects = NSDictionary(contentsOfFile: filePath!)
         var word = Objects!["words"]
         
-        
         var oneword = arc4random_uniform(UInt32(word!.count))
         var twoword = arc4random_uniform(UInt32(word!.count))
         var threeword = arc4random_uniform(UInt32(word!.count))
