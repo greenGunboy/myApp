@@ -117,6 +117,7 @@ class startViewController: UIViewController, UITextViewDelegate {
         if ud.objectForKey("ideaList") != nil {
             userIdea = ud.objectForKey("ideaList")! as! [NSDictionary]
         }
+        
         let dateFormatter = NSDateFormatter()
         dateFormatter.dateFormat = "yyyy/MM/dd HH:mm"
         var now = NSDate()
@@ -125,11 +126,13 @@ class startViewController: UIViewController, UITextViewDelegate {
         var two : String = twowordLabel.text!
         var three : String = threewordLabel.text!
         var memo : String = ""
-        if memoTextView.text == "ここにメモを書いてください"{
+        
+        if memoTextView.text == "ここにメモを書いてください" {
             memo = ""
         }else{
             memo = memoTextView.text!
         }
+        
         var ideaInfo: NSDictionary = ["time":time,"one":one,"two":two,"three":three,"memo":memo]
         userIdea.append(ideaInfo)
         

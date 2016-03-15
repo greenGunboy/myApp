@@ -125,7 +125,7 @@ class timeEditViewController: UIViewController, UIPickerViewDataSource, UIPicker
 //            Dictionary内のwords内のデータを変数へ
             var addInt = objects!["words"] as! NSMutableDictionary
 //            add.Intをkey、textをvalueとしてDictionaryに追加
-            addInt.setValue(text, forKey: "\(addInt.count)")
+            addInt.setValue(text, forKey: "\(addInt.count)" as! String)
 //            追加したデータを上書き
             objects!["words"] = addInt
 //            plistへ書き込み

@@ -35,6 +35,7 @@ class listViewController: UIViewController {
         self.listTwoLabel.text = udResult[scSeletedIndex]["two"] as! String
         self.listThreeLabel.text = udResult[scSeletedIndex]["three"] as! String
         listMemoText.text = "\(udResult[scSeletedIndex]["memo"] as! String)"
+        listMemoText.editable = false
         
     }
 
