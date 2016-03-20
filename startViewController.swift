@@ -29,18 +29,26 @@ class startViewController: UIViewController, UITextViewDelegate {
         memoTextView.text = "ここにメモを書いてください"
         memoTextView.delegate = self
         memoTextView.textColor = UIColor.lightGrayColor()
+//        端末内のドキュメントディレクトリ内のplistを読み込み
+        let documentsPath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as String
+        let fileName = "words.plist"
+        var filePath = documentsPath + "/" + fileName
+        var objects = NSMutableDictionary(contentsOfFile: filePath)
+//        無ければ、アプリ内のplistを読み込む
+        if objects == nil {
+            var bundleFilePath = NSBundle.mainBundle().pathForResource("wordsList", ofType: "plist")
+            objects = NSMutableDictionary(contentsOfFile: bundleFilePath!)
+        }
         
-        var filePath = NSBundle.mainBundle().pathForResource("wordsList", ofType: "plist")
-        var Objects = NSDictionary(contentsOfFile: filePath!)
-        var word = Objects!["words"]
+        var word = objects!["words"]
         
         var oneword = arc4random_uniform(UInt32(word!.count))
         var twoword = arc4random_uniform(UInt32(word!.count))
         var threeword = arc4random_uniform(UInt32(word!.count))
         
-        self.onewordLabel.text = (Objects!["words"]!["\(oneword)"]) as! String
-        self.twowordLabel.text = (Objects!["words"]!["\(twoword)"]) as! String
-        self.threewordLabel.text = (Objects!["words"]!["\(threeword)"]) as! String
+        self.onewordLabel.text = (objects!["words"]!["\(oneword)"]) as! String
+        self.twowordLabel.text = (objects!["words"]!["\(twoword)"]) as! String
+        self.threewordLabel.text = (objects!["words"]!["\(threeword)"]) as! String
         
     }
     

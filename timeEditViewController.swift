@@ -109,7 +109,6 @@ class timeEditViewController: UIViewController, UIPickerViewDataSource, UIPicker
     }
     
     
-    
     @IBAction func addActionBtn(sender: UIButton) {
         
         animaAdd.animation = "squeeze"
@@ -118,10 +117,17 @@ class timeEditViewController: UIViewController, UIPickerViewDataSource, UIPicker
         if myTextField.text != ""{
 //            テキスト内のデータをString型として変数へ
             var text : String = myTextField.text!
-//            plist読み込み
-            var filePath = NSBundle.mainBundle().pathForResource("wordsList", ofType: "plist")
-//            Dictionary型に変換
-            var objects = NSMutableDictionary(contentsOfFile: filePath!)
+//            ドキュメントパス。ドキュメントディレクトリ内のplistを読み込み
+            let documentsPath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as String
+            let fileName = "words.plist"
+            var filePath = documentsPath + "/" + fileName
+            var objects = NSMutableDictionary(contentsOfFile: filePath)
+//            データが無ければ
+            if objects == nil {
+//            アプリ内plist読み込み
+                var bundleFilePath = NSBundle.mainBundle().pathForResource("wordsList", ofType: "plist")
+                objects = NSMutableDictionary(contentsOfFile: bundleFilePath!)
+            }
 //            Dictionary内のwords内のデータを変数へ
             var addInt = objects!["words"] as! NSMutableDictionary
 //            add.Intをkey、textをvalueとしてDictionaryに追加
@@ -129,7 +135,8 @@ class timeEditViewController: UIViewController, UIPickerViewDataSource, UIPicker
 //            追加したデータを上書き
             objects!["words"] = addInt
 //            plistへ書き込み
-            objects?.writeToFile(filePath!, atomically: true)
+            objects?.writeToFile(filePath, atomically: true)
+            print(addInt)
             
             let alertController = UIAlertController(title: "\(text)を保存しました", message: nil, preferredStyle: .Alert)
             alertController.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))

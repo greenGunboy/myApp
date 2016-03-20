@@ -95,7 +95,7 @@ List</string>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="32"/>
                                 <state key="normal">
                                     <string key="title">How
- To 
+  To 
 Use</string>
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -601,7 +601,7 @@ Use</string>
                                 </constraints>
                                 <items>
                                     <navigationItem id="B7x-7T-q3v">
-                                        <barButtonItem key="leftBarButtonItem" title="Reset" id="9eL-cA-HnB">
+                                        <barButtonItem key="leftBarButtonItem" title="Back" id="9eL-cA-HnB">
                                             <connections>
                                                 <segue destination="BYZ-38-t0r" kind="show" id="FeD-3U-CLx"/>
                                             </connections>
@@ -707,7 +707,7 @@ Use</string>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="zNz-x8-TAF"/>
-        <segue reference="oJb-2O-6l3"/>
+        <segue reference="FeD-3U-CLx"/>
+        <segue reference="0gi-GR-Ygh"/>
     </inferredMetricsTieBreakers>
 </document>
