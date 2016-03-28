@@ -78,33 +78,42 @@ class startViewController: UIViewController, UITextViewDelegate {
         timeLabel.text = "\(mm_str):\(ss_str)"
         
         if timerCount == 0 {
-            
+
             var ud = NSUserDefaults.standardUserDefaults()
-            userIdea = ud.objectForKey("ideaList")! as! [NSDictionary]
+            
+            if ud.objectForKey("ideaList") != nil {
+                userIdea = ud.objectForKey("ideaList")! as! [NSDictionary]
+            }
             
             let dateFormatter = NSDateFormatter()
             dateFormatter.dateFormat = "yyyy/MM/dd HH:mm"
             var now = NSDate()
-            
             var time : String = dateFormatter.stringFromDate(now)
             var one : String = onewordLabel.text!
             var two : String = twowordLabel.text!
             var three : String = threewordLabel.text!
             var memo : String = memoTextView.text!
             
+            if memoTextView.text == "ここにメモを書いてください" {
+                memo = ""
+            }else{
+                memo = memoTextView.text!
+            }
+                
             var ideaInfo: NSDictionary = ["time":time,"one":one,"two":two,"three":three,"memo":memo]
-            
+                
             userIdea.append(ideaInfo)
-            
+                
             ud.setObject(userIdea, forKey: "ideaList")
-            
+                
             ud.synchronize()
-            
-        let alertController = UIAlertController(title: "Time Up", message: "Idea Listへ保存しました", preferredStyle: .Alert)
+                
+            let alertController = UIAlertController(title: "Time Up", message: "Idea Listへ保存しました", preferredStyle: .Alert)
             alertController.addAction(UIAlertAction(title: "OK", style: .Default, handler: {action in self.move()}))
-            presentViewController(alertController, animated: true, completion: nil)
-            
+                presentViewController(alertController, animated: true, completion: nil)
+                
             timer.invalidate()
+                
         }
     }
     
