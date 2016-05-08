@@ -9,8 +9,12 @@
 import UIKit
 import iAd
 
-class tableViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class tableViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, GADBannerViewDelegate {
     
+    let YOUR_ID = "ca-app-pub-3530000000000000/0123456789"  // Enter Ad's ID here
+    let TEST_DEVICE_ID = "61b0154xxxxxxxxxxxxxxxxxxxxxxxe0" // Enter Test ID here
+    let AdMobTest:Bool = true
+    let SimulatorTest:Bool = true
     var selectedIndex:Int = 0
     
     @IBOutlet weak var myTableView: UITableView!
@@ -18,6 +22,9 @@ class tableViewController: UIViewController, UITableViewDataSource, UITableViewD
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let bannerView:GADBannerView = getAdBannerView()
+        self.view.addSubview(bannerView)
         
         self.canDisplayBannerAds = true
         self.myAdBanner.hidden = true
@@ -37,6 +44,30 @@ class tableViewController: UIViewController, UITableViewDataSource, UITableViewD
         gradientLayer.frame = self.view.bounds
         
         self.view.layer.insertSublayer(gradientLayer, atIndex: 0)
+    }
+    
+    private func getAdBannerView() -> GADBannerView {
+        var bannerView: GADBannerView = GADBannerView()
+        bannerView = GADBannerView(adSize:kGADAdSizeBanner)
+        bannerView.frame.origin = CGPointMake(0, 20)
+        bannerView.frame.size = CGSizeMake(self.view.frame.width, bannerView.frame.height)
+        bannerView.adUnitID = "\(YOUR_ID)"
+        bannerView.delegate = self
+        bannerView.rootViewController = self
+        
+        var request:GADRequest = GADRequest()
+        
+        if AdMobTest {
+            if SimulatorTest {
+                request.testDevices = [kGADSimulatorID]
+            } else {
+                request.testDevices = [TEST_DEVICE_ID]
+            }
+        }
+        
+        bannerView.loadRequest(request)
+        
+        return bannerView
     }
     
     override func viewWillAppear(animated: Bool) {
