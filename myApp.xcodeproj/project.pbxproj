@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4BCE7F081CDF811C00082F53 /* GoogleMobileAdsSdkiOS-7.8.0 in Resources */ = {isa = PBXBuildFile; fileRef = 4BCE7F071CDF811C00082F53 /* GoogleMobileAdsSdkiOS-7.8.0 */; };
 		4BCE7F0A1CDF813A00082F53 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BCE7F091CDF813A00082F53 /* AdSupport.framework */; };
 		4BCE7F0C1CDF813F00082F53 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BCE7F0B1CDF813F00082F53 /* AudioToolbox.framework */; };
 		4BCE7F0E1CDF814400082F53 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BCE7F0D1CDF814400082F53 /* AVFoundation.framework */; };
@@ -18,6 +17,7 @@
 		4BCE7F181CDF819800082F53 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BCE7F171CDF819800082F53 /* MessageUI.framework */; };
 		4BCE7F1A1CDF81A700082F53 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BCE7F191CDF81A700082F53 /* StoreKit.framework */; };
 		4BCE7F1C1CDF81AE00082F53 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BCE7F1B1CDF81AE00082F53 /* SystemConfiguration.framework */; };
+		4BCE7F1F1CDF882900082F53 /* GoogleMobileAds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BCE7F1E1CDF882900082F53 /* GoogleMobileAds.framework */; };
 		5A0CDF221C731EDA008DA29C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A0CDF211C731EDA008DA29C /* ViewController.swift */; };
 		5A0CDF251C731EDA008DA29C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A0CDF231C731EDA008DA29C /* Main.storyboard */; };
 		5A0CDF281C731EDA008DA29C /* myApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5A0CDF261C731EDA008DA29C /* myApp.xcdatamodeld */; };
@@ -94,7 +94,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		4BCE7F071CDF811C00082F53 /* GoogleMobileAdsSdkiOS-7.8.0 */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "GoogleMobileAdsSdkiOS-7.8.0"; path = "../../../../../Downloads/GoogleMobileAdsSdkiOS-7.8.0"; sourceTree = "<group>"; };
 		4BCE7F091CDF813A00082F53 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
 		4BCE7F0B1CDF813F00082F53 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		4BCE7F0D1CDF814400082F53 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
@@ -106,6 +105,7 @@
 		4BCE7F191CDF81A700082F53 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		4BCE7F1B1CDF81AE00082F53 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		4BCE7F1D1CDF821100082F53 /* Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Header.h; sourceTree = "<group>"; };
+		4BCE7F1E1CDF882900082F53 /* GoogleMobileAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMobileAds.framework; path = "../../../../Downloads/GoogleMobileAdsSdkiOS-7.8.0/GoogleMobileAds.framework"; sourceTree = "<group>"; };
 		5A0CDF1C1C731EDA008DA29C /* myApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = myApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A0CDF1F1C731EDA008DA29C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5A0CDF211C731EDA008DA29C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -166,6 +166,7 @@
 				4BCE7F1C1CDF81AE00082F53 /* SystemConfiguration.framework in Frameworks */,
 				4BCE7F1A1CDF81A700082F53 /* StoreKit.framework in Frameworks */,
 				4BCE7F181CDF819800082F53 /* MessageUI.framework in Frameworks */,
+				4BCE7F1F1CDF882900082F53 /* GoogleMobileAds.framework in Frameworks */,
 				4BCE7F161CDF818B00082F53 /* EventKitUI.framework in Frameworks */,
 				4BCE7F141CDF818200082F53 /* EventKit.framework in Frameworks */,
 				4BCE7F121CDF816A00082F53 /* CoreTelephony.framework in Frameworks */,
@@ -197,6 +198,7 @@
 			isa = PBXGroup;
 			children = (
 				4BCE7F1D1CDF821100082F53 /* Header.h */,
+				4BCE7F1E1CDF882900082F53 /* GoogleMobileAds.framework */,
 				4BCE7F1B1CDF81AE00082F53 /* SystemConfiguration.framework */,
 				4BCE7F191CDF81A700082F53 /* StoreKit.framework */,
 				4BCE7F171CDF819800082F53 /* MessageUI.framework */,
@@ -227,7 +229,6 @@
 		5A0CDF1E1C731EDA008DA29C /* myApp */ = {
 			isa = PBXGroup;
 			children = (
-				4BCE7F071CDF811C00082F53 /* GoogleMobileAdsSdkiOS-7.8.0 */,
 				5A57E4BA1C833AEB00DC44F7 /* Spring */,
 				5A0CDF1F1C731EDA008DA29C /* AppDelegate.swift */,
 				5A0CDF211C731EDA008DA29C /* ViewController.swift */,
@@ -407,7 +408,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4BCE7F081CDF811C00082F53 /* GoogleMobileAdsSdkiOS-7.8.0 in Resources */,
 				5A0CDF551C73706A008DA29C /* wordsList.plist in Resources */,
 				5A0CDF2D1C731EDA008DA29C /* LaunchScreen.storyboard in Resources */,
 				5A57E4E51C833AEB00DC44F7 /* Info.plist in Resources */,
