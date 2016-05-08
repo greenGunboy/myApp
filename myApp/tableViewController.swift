@@ -8,6 +8,7 @@
 
 import UIKit
 import iAd
+import GoogleMobileAds
 
 class tableViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, GADBannerViewDelegate {
     
