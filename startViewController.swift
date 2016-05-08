@@ -107,7 +107,7 @@ class startViewController: UIViewController, UITextViewDelegate {
             ud.setObject(userIdea, forKey: "ideaList")
                 
             ud.synchronize()
-                
+            
             let alertController = UIAlertController(title: "Time Up", message: "Idea Listへ保存しました", preferredStyle: .Alert)
             alertController.addAction(UIAlertAction(title: "OK", style: .Default, handler: {action in self.move()}))
                 presentViewController(alertController, animated: true, completion: nil)
