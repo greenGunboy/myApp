@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -95,7 +95,7 @@ List</string>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="32"/>
                                 <state key="normal">
                                     <string key="title">How
- To 
+  To 
 Use</string>
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -601,7 +601,7 @@ Use</string>
                                 </constraints>
                                 <items>
                                     <navigationItem id="B7x-7T-q3v">
-                                        <barButtonItem key="leftBarButtonItem" title="Reset" id="9eL-cA-HnB">
+                                        <barButtonItem key="leftBarButtonItem" title="Back" id="9eL-cA-HnB">
                                             <connections>
                                                 <segue destination="BYZ-38-t0r" kind="show" id="FeD-3U-CLx"/>
                                             </connections>
@@ -707,7 +707,7 @@ Use</string>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="zNz-x8-TAF"/>
-        <segue reference="oJb-2O-6l3"/>
+        <segue reference="FeD-3U-CLx"/>
+        <segue reference="Inh-2E-srk"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -29,18 +29,26 @@ class startViewController: UIViewController, UITextViewDelegate {
         memoTextView.text = "ここにメモを書いてください"
         memoTextView.delegate = self
         memoTextView.textColor = UIColor.lightGrayColor()
+//        端末内のドキュメントディレクトリ内のplistを読み込み
+        let documentsPath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as String
+        let fileName = "words.plist"
+        var filePath = documentsPath + "/" + fileName
+        var objects = NSMutableDictionary(contentsOfFile: filePath)
+//        無ければ、アプリ内のplistを読み込む
+        if objects == nil {
+            var bundleFilePath = NSBundle.mainBundle().pathForResource("wordsList", ofType: "plist")
+            objects = NSMutableDictionary(contentsOfFile: bundleFilePath!)
+        }
         
-        var filePath = NSBundle.mainBundle().pathForResource("wordsList", ofType: "plist")
-        var Objects = NSDictionary(contentsOfFile: filePath!)
-        var word = Objects!["words"]
+        var word = objects!["words"]
         
         var oneword = arc4random_uniform(UInt32(word!.count))
         var twoword = arc4random_uniform(UInt32(word!.count))
         var threeword = arc4random_uniform(UInt32(word!.count))
         
-        self.onewordLabel.text = (Objects!["words"]!["\(oneword)"]) as! String
-        self.twowordLabel.text = (Objects!["words"]!["\(twoword)"]) as! String
-        self.threewordLabel.text = (Objects!["words"]!["\(threeword)"]) as! String
+        self.onewordLabel.text = (objects!["words"]!["\(oneword)"]) as! String
+        self.twowordLabel.text = (objects!["words"]!["\(twoword)"]) as! String
+        self.threewordLabel.text = (objects!["words"]!["\(threeword)"]) as! String
         
     }
     
@@ -70,33 +78,42 @@ class startViewController: UIViewController, UITextViewDelegate {
         timeLabel.text = "\(mm_str):\(ss_str)"
         
         if timerCount == 0 {
-            
+
             var ud = NSUserDefaults.standardUserDefaults()
-            userIdea = ud.objectForKey("ideaList")! as! [NSDictionary]
+            
+            if ud.objectForKey("ideaList") != nil {
+                userIdea = ud.objectForKey("ideaList")! as! [NSDictionary]
+            }
             
             let dateFormatter = NSDateFormatter()
             dateFormatter.dateFormat = "yyyy/MM/dd HH:mm"
             var now = NSDate()
-            
             var time : String = dateFormatter.stringFromDate(now)
             var one : String = onewordLabel.text!
             var two : String = twowordLabel.text!
             var three : String = threewordLabel.text!
             var memo : String = memoTextView.text!
             
+            if memoTextView.text == "ここにメモを書いてください" {
+                memo = ""
+            }else{
+                memo = memoTextView.text!
+            }
+                
             var ideaInfo: NSDictionary = ["time":time,"one":one,"two":two,"three":three,"memo":memo]
-            
+                
             userIdea.append(ideaInfo)
-            
+                
             ud.setObject(userIdea, forKey: "ideaList")
-            
+                
             ud.synchronize()
             
-        let alertController = UIAlertController(title: "Time Up", message: "Idea Listへ保存しました", preferredStyle: .Alert)
+            let alertController = UIAlertController(title: "Time Up", message: "Idea Listへ保存しました", preferredStyle: .Alert)
             alertController.addAction(UIAlertAction(title: "OK", style: .Default, handler: {action in self.move()}))
-            presentViewController(alertController, animated: true, completion: nil)
-            
+                presentViewController(alertController, animated: true, completion: nil)
+                
             timer.invalidate()
+                
         }
     }
     
@@ -117,6 +134,7 @@ class startViewController: UIViewController, UITextViewDelegate {
         if ud.objectForKey("ideaList") != nil {
             userIdea = ud.objectForKey("ideaList")! as! [NSDictionary]
         }
+        
         let dateFormatter = NSDateFormatter()
         dateFormatter.dateFormat = "yyyy/MM/dd HH:mm"
         var now = NSDate()
@@ -125,11 +143,13 @@ class startViewController: UIViewController, UITextViewDelegate {
         var two : String = twowordLabel.text!
         var three : String = threewordLabel.text!
         var memo : String = ""
-        if memoTextView.text == "ここにメモを書いてください"{
+        
+        if memoTextView.text == "ここにメモを書いてください" {
             memo = ""
         }else{
             memo = memoTextView.text!
         }
+        
         var ideaInfo: NSDictionary = ["time":time,"one":one,"two":two,"three":three,"memo":memo]
         userIdea.append(ideaInfo)
         
