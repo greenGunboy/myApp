@@ -104,8 +104,8 @@
 		4BCE7F171CDF819800082F53 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		4BCE7F191CDF81A700082F53 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		4BCE7F1B1CDF81AE00082F53 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
-		4BCE7F1D1CDF821100082F53 /* Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Header.h; sourceTree = "<group>"; };
 		4BCE7F1E1CDF882900082F53 /* GoogleMobileAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMobileAds.framework; path = "../../../../Downloads/GoogleMobileAdsSdkiOS-7.8.0/GoogleMobileAds.framework"; sourceTree = "<group>"; };
+		4BCE7F221CDF8FBB00082F53 /* Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Header.h; sourceTree = "<group>"; };
 		5A0CDF1C1C731EDA008DA29C /* myApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = myApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A0CDF1F1C731EDA008DA29C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5A0CDF211C731EDA008DA29C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -197,7 +197,6 @@
 		5A0CDF131C731ED9008DA29C = {
 			isa = PBXGroup;
 			children = (
-				4BCE7F1D1CDF821100082F53 /* Header.h */,
 				4BCE7F1E1CDF882900082F53 /* GoogleMobileAds.framework */,
 				4BCE7F1B1CDF81AE00082F53 /* SystemConfiguration.framework */,
 				4BCE7F191CDF81A700082F53 /* StoreKit.framework */,
@@ -229,6 +228,7 @@
 		5A0CDF1E1C731EDA008DA29C /* myApp */ = {
 			isa = PBXGroup;
 			children = (
+				4BCE7F221CDF8FBB00082F53 /* Header.h */,
 				5A57E4BA1C833AEB00DC44F7 /* Spring */,
 				5A0CDF1F1C731EDA008DA29C /* AppDelegate.swift */,
 				5A0CDF211C731EDA008DA29C /* ViewController.swift */,
