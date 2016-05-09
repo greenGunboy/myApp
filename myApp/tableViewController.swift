@@ -7,29 +7,23 @@
 //
 
 import UIKit
-import iAd
 import GoogleMobileAds
 
 class tableViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, GADBannerViewDelegate {
     
-    let YOUR_ID = "ca-app-pub-3530000000000000/0123456789"  // Enter Ad's ID here
+    let YOUR_ID = "ca-app-pub-3612887199188449/3226502612"  // Enter Ad's ID here
     let TEST_DEVICE_ID = "61b0154xxxxxxxxxxxxxxxxxxxxxxxe0" // Enter Test ID here
     let AdMobTest:Bool = true
     let SimulatorTest:Bool = true
     var selectedIndex:Int = 0
     
     @IBOutlet weak var myTableView: UITableView!
-    @IBOutlet weak var myAdBanner: ADBannerView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         let bannerView:GADBannerView = getAdBannerView()
         self.view.addSubview(bannerView)
-        
-        self.canDisplayBannerAds = true
-        self.myAdBanner.hidden = true
-        myTableView.delegate = self
         
         let topColor = UIColor(red:0, green:0.5, blue:1, alpha:1)
         let midColor = UIColor(red:0, green:0.5, blue:1, alpha:1)
@@ -50,7 +44,7 @@ class tableViewController: UIViewController, UITableViewDataSource, UITableViewD
     private func getAdBannerView() -> GADBannerView {
         var bannerView: GADBannerView = GADBannerView()
         bannerView = GADBannerView(adSize:kGADAdSizeBanner)
-        bannerView.frame.origin = CGPointMake(0, 20)
+        bannerView.frame.origin = CGPointMake(0, self.view.frame.size.height - bannerView.frame.height)
         bannerView.frame.size = CGSizeMake(self.view.frame.width, bannerView.frame.height)
         bannerView.adUnitID = "\(YOUR_ID)"
         bannerView.delegate = self
@@ -128,20 +122,8 @@ class tableViewController: UIViewController, UITableViewDataSource, UITableViewD
         selectedIndex = indexPath.row
         performSegueWithIdentifier("listViewSegue", sender: nil)
     }
-    
-    func bannerViewDidLoadAd(banner: ADBannerView!){
-        self.myAdBanner.hidden = false
-    }
-    
-    func bannerViewActionShouldBegin(banner: ADBannerView!, willLeaveApplication willLeave:Bool) ->Bool{
-        return willLeave
-    }
-    
-    func bannerView(banner: ADBannerView!, didFailToReceiveAdWithError error: NSError!){
-        self.myAdBanner.hidden = true
-    }
 
-    
+
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
         if segue.identifier == "listViewSegue" {

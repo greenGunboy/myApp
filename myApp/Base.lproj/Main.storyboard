@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -335,7 +335,7 @@ Use</string>
                                 </items>
                             </navigationBar>
                             <tableView clipsSubviews="YES" alpha="0.94999999999999996" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" sectionIndexMinimumDisplayRowCount="1" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="O7G-eG-33P">
-                                <rect key="frame" x="0.0" y="64" width="375" height="537"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="553"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="myCell" id="ams-0J-04c">
@@ -356,26 +356,19 @@ Use</string>
                                     <outlet property="delegate" destination="JFf-4P-DrB" id="xdD-L2-QsB"/>
                                 </connections>
                             </tableView>
-                            <adBannerView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="geG-ce-iX1">
-                                <rect key="frame" x="0.0" y="601" width="375" height="66"/>
-                            </adBannerView>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <gestureRecognizers/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="geG-ce-iX1" secondAttribute="trailing" id="2lo-kF-1FZ"/>
-                            <constraint firstItem="geG-ce-iX1" firstAttribute="top" secondItem="O7G-eG-33P" secondAttribute="bottom" id="7w9-FG-toj"/>
+                            <constraint firstItem="TJw-rg-mQC" firstAttribute="top" secondItem="O7G-eG-33P" secondAttribute="bottom" constant="50" id="ATd-Gn-Glq"/>
                             <constraint firstItem="O7G-eG-33P" firstAttribute="top" secondItem="mm8-sP-Vq2" secondAttribute="bottom" id="Bnl-3g-rf1"/>
-                            <constraint firstItem="geG-ce-iX1" firstAttribute="top" secondItem="O7G-eG-33P" secondAttribute="bottom" id="CsV-2E-m3C"/>
                             <constraint firstAttribute="trailing" secondItem="O7G-eG-33P" secondAttribute="trailing" id="EFi-Ji-ufX"/>
                             <constraint firstItem="O7G-eG-33P" firstAttribute="leading" secondItem="c5P-hf-DpH" secondAttribute="leading" id="Fb9-Tn-qnq"/>
                             <constraint firstItem="O7G-eG-33P" firstAttribute="trailing" secondItem="mm8-sP-Vq2" secondAttribute="trailing" id="Jqo-UU-UhY"/>
                             <constraint firstItem="O7G-eG-33P" firstAttribute="leading" secondItem="mm8-sP-Vq2" secondAttribute="leading" id="dgV-9R-5Pw"/>
                             <constraint firstItem="mm8-sP-Vq2" firstAttribute="top" secondItem="c5P-hf-DpH" secondAttribute="top" id="ek2-Fx-lcr"/>
                             <constraint firstItem="O7G-eG-33P" firstAttribute="leading" secondItem="c5P-hf-DpH" secondAttribute="leading" id="fMt-OZ-fBL"/>
-                            <constraint firstItem="TJw-rg-mQC" firstAttribute="top" secondItem="geG-ce-iX1" secondAttribute="bottom" id="iCe-X2-Vo8"/>
                             <constraint firstAttribute="trailing" secondItem="mm8-sP-Vq2" secondAttribute="trailing" id="mkO-Cm-UET"/>
-                            <constraint firstItem="geG-ce-iX1" firstAttribute="leading" secondItem="c5P-hf-DpH" secondAttribute="leading" id="pSo-iY-aaN"/>
                             <constraint firstAttribute="trailing" secondItem="O7G-eG-33P" secondAttribute="trailing" id="ruR-R5-6ZB"/>
                             <constraint firstItem="O7G-eG-33P" firstAttribute="leading" secondItem="c5P-hf-DpH" secondAttribute="leading" id="xIp-mq-bjv"/>
                         </constraints>
@@ -385,7 +378,6 @@ Use</string>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
-                        <outlet property="myAdBanner" destination="geG-ce-iX1" id="UDq-R3-d9a"/>
                         <outlet property="myTableView" destination="O7G-eG-33P" id="kF1-Yx-eZv"/>
                     </connections>
                 </viewController>
@@ -489,14 +481,10 @@ Use</string>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </label>
-                            <adBannerView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0Be-zd-hUF">
-                                <rect key="frame" x="0.0" y="601" width="375" height="66"/>
-                            </adBannerView>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <gestureRecognizers/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="0Be-zd-hUF" secondAttribute="trailing" id="1XJ-mO-6Ke"/>
                             <constraint firstItem="N4f-5U-BTj" firstAttribute="leading" secondItem="J3N-hT-RSl" secondAttribute="leading" id="3ec-iu-xAX"/>
                             <constraint firstItem="Okd-aF-4SF" firstAttribute="leading" secondItem="J3N-hT-RSl" secondAttribute="leading" constant="20" id="3rI-Lc-p0X"/>
                             <constraint firstItem="LI7-8G-5fn" firstAttribute="top" secondItem="YaZ-Rg-S9e" secondAttribute="bottom" id="6Qr-h5-5dk"/>
@@ -507,16 +495,13 @@ Use</string>
                             <constraint firstAttribute="trailing" secondItem="YaZ-Rg-S9e" secondAttribute="trailing" constant="20" id="Lfj-rg-2jA"/>
                             <constraint firstItem="amG-qZ-Opn" firstAttribute="top" secondItem="N4f-5U-BTj" secondAttribute="bottom" constant="12" id="OVP-v7-0KO"/>
                             <constraint firstItem="YaZ-Rg-S9e" firstAttribute="leading" secondItem="J3N-hT-RSl" secondAttribute="leading" constant="20" id="OzO-6k-EY1"/>
-                            <constraint firstItem="JFz-XH-sBe" firstAttribute="top" secondItem="0Be-zd-hUF" secondAttribute="bottom" id="Qin-PN-rOO"/>
                             <constraint firstItem="LI7-8G-5fn" firstAttribute="leading" secondItem="J3N-hT-RSl" secondAttribute="leading" constant="20" id="Tcj-00-jFT"/>
-                            <constraint firstItem="0Be-zd-hUF" firstAttribute="leading" secondItem="J3N-hT-RSl" secondAttribute="leading" id="a3i-G7-pOk"/>
                             <constraint firstItem="YaZ-Rg-S9e" firstAttribute="top" secondItem="amG-qZ-Opn" secondAttribute="bottom" constant="8" id="ckT-yK-cdh"/>
                             <constraint firstAttribute="trailing" secondItem="Okd-aF-4SF" secondAttribute="trailing" constant="20" id="d39-Md-LeH"/>
                             <constraint firstItem="JFz-XH-sBe" firstAttribute="top" secondItem="bRK-Qw-00s" secondAttribute="bottom" constant="231" id="oH6-0E-WR1"/>
                             <constraint firstAttribute="trailing" secondItem="bRK-Qw-00s" secondAttribute="trailing" id="pIq-t7-FVa"/>
                             <constraint firstAttribute="trailing" secondItem="N4f-5U-BTj" secondAttribute="trailing" id="qjN-YC-WCh"/>
                             <constraint firstItem="bRK-Qw-00s" firstAttribute="top" secondItem="Okd-aF-4SF" secondAttribute="bottom" id="vse-DY-ldZ"/>
-                            <constraint firstItem="0Be-zd-hUF" firstAttribute="top" secondItem="bRK-Qw-00s" secondAttribute="bottom" constant="165" id="z3V-9I-2AC"/>
                             <constraint firstItem="Okd-aF-4SF" firstAttribute="top" secondItem="LI7-8G-5fn" secondAttribute="bottom" id="ziT-mv-De7"/>
                         </constraints>
                         <connections>
@@ -530,7 +515,6 @@ Use</string>
                         <outlet property="listThreeLabel" destination="Okd-aF-4SF" id="LyV-ML-Jzh"/>
                         <outlet property="listTimeLabel" destination="amG-qZ-Opn" id="7xa-Ia-5ae"/>
                         <outlet property="listTwoLabel" destination="LI7-8G-5fn" id="CZr-o9-d7a"/>
-                        <outlet property="myAdBanner" destination="0Be-zd-hUF" id="bRU-w0-Op9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yp5-oK-xGi" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -707,7 +691,7 @@ Use</string>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="zNz-x8-TAF"/>
         <segue reference="oJb-2O-6l3"/>
+        <segue reference="3w6-GG-XHB"/>
     </inferredMetricsTieBreakers>
 </document>
